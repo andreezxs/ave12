@@ -2,12 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
-import { news, formatDate } from "@/data/site";
+import { formatDate, type NewsPost } from "@/data/site";
+import { fetchNews } from "@/lib/news";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
 import comunidadeImg from "@/assets/comunidade.jpg";
 
 export const Route = createFileRoute("/noticias/")({
+  loader: async () => ({ news: await fetchNews() }),
   component: Noticias,
   head: () => ({
     meta: [
@@ -33,9 +35,11 @@ const categories = [
   "Juventude",
   "PASCOM",
   "Comunicados",
+  "Geral",
 ];
 
 function Noticias() {
+  const { news } = Route.useLoaderData() as { news: NewsPost[] };
   const [active, setActive] = useState("Paróquia");
   const list = news.filter((n) => n.category === active);
 

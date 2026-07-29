@@ -51,7 +51,9 @@ export type NewsCategory =
   | "Catequese"
   | "Juventude"
   | "PASCOM"
-  | "Comunicados";
+  | "Comunicados"
+  | "Geral"
+  | string;
 
 export interface NewsPost {
   slug: string;
@@ -318,16 +320,24 @@ export const prizes = [
 
 ];
 
-export const albums = [
-  { title: "Festa da Padroeira", category: "Festas", count: 128 },
-  { title: "Corpus Christi", category: "Eventos", count: 96 },
-  { title: "Arraiá da Mãe Aparecida", category: "Festas", count: 74 },
-  { title: "Show de Prêmios", category: "Eventos", count: 61 },
-  { title: "Missas Dominicais", category: "Missas", count: 210 },
-  { title: "Sacramentos", category: "Sacramentos", count: 145 },
-  { title: "Comunidade em Missão", category: "Comunidade", count: 88 },
-  { title: "Fotos Históricas", category: "Fotos Históricas", count: 52 },
-  { title: "Catequese", category: "Comunidade", count: 39 },
+export interface GalleryAlbum {
+  slug?: string;
+  title: string;
+  category: string;
+  count: number;
+  coverUrl?: string;
+}
+
+export const albums: GalleryAlbum[] = [
+  { slug: "festa-da-padroeira", title: "Festa da Padroeira", category: "Festas", count: 128 },
+  { slug: "corpus-christi", title: "Corpus Christi", category: "Eventos", count: 96 },
+  { slug: "arraia-da-mae-aparecida", title: "Arraiá da Mãe Aparecida", category: "Festas", count: 74 },
+  { slug: "show-de-premios", title: "Show de Prêmios", category: "Eventos", count: 61 },
+  { slug: "missas-dominicais", title: "Missas Dominicais", category: "Missas", count: 210 },
+  { slug: "sacramentos", title: "Sacramentos", category: "Sacramentos", count: 145 },
+  { slug: "comunidade-em-missao", title: "Comunidade em Missão", category: "Comunidade", count: 88 },
+  { slug: "fotos-historicas", title: "Fotos Históricas", category: "Fotos Históricas", count: 52 },
+  { slug: "catequese", title: "Catequese", category: "Comunidade", count: 39 },
 ];
 
 export const galleryCategories = [

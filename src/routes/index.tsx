@@ -15,20 +15,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionTitle } from "@/components/site/Section";
-import {
-  albums,
-  agenda,
-  news,
-  parish,
-  formatDate,
-  formatShortDate,
-  schedules,
-} from "@/data/site";
+import { albums, agenda, parish, formatDate, formatShortDate, schedules } from "@/data/site";
+import { fetchNews } from "@/lib/news";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
 import comunidadeImg from "@/assets/comunidade.jpg";
 
 export const Route = createFileRoute("/")({
+  loader: async () => ({ news: await fetchNews() }),
   component: Home,
   head: () => ({
     meta: [
@@ -61,6 +55,7 @@ const quickCards = [
 ];
 
 function Home() {
+  const { news } = Route.useLoaderData() as { news: Array<{ slug: string } & Record<string, unknown>> };
   const latest = news.slice(0, 3);
 
   return (

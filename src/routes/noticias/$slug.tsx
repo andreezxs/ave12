@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { news, formatDate, type NewsPost } from "@/data/site";
+import { fetchNews, fetchNewsBySlug } from "@/lib/news";
+import { formatDate, type NewsPost } from "@/data/site";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
 import comunidadeImg from "@/assets/comunidade.jpg";
@@ -9,10 +10,11 @@ import comunidadeImg from "@/assets/comunidade.jpg";
 const covers = { igreja: heroImg, interior: interiorImg, comunidade: comunidadeImg };
 
 export const Route = createFileRoute("/noticias/$slug")({
-  loader: ({ params }) => {
-    const post = news.find((n) => n.slug === params.slug);
+  loader: async ({ params }) => {
+    const post = await fetchNewsBySlug(params.slug);
     if (!post) throw notFound();
-    return { post };
+    const related = (await fetchNews()).filter((n) => n.slug !== params.slug).slice(0, 3);
+    return { post, related };
   },
   component: Post,
   head: ({ params, loaderData }) => {
@@ -46,8 +48,7 @@ export const Route = createFileRoute("/noticias/$slug")({
 });
 
 function Post() {
-  const { post } = Route.useLoaderData() as { post: NewsPost };
-  const related = news.filter((n) => n.slug !== post.slug).slice(0, 3);
+  const { post, related } = Route.useLoaderData() as { post: NewsPost; related: NewsPost[] };
 
   const share = () => {
     if (typeof navigator !== "undefined" && navigator.share) {

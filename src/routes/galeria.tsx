@@ -3,13 +3,15 @@ import { useState } from "react";
 import { Images, X } from "lucide-react";
 import { PageHero } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
-import { albums, galleryCategories } from "@/data/site";
+import { fetchAlbums } from "@/lib/gallery";
+import type { GalleryAlbum } from "@/data/site";
 import comunidadeImg from "@/assets/comunidade.jpg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/galeria")({
+  loader: async () => ({ albums: await fetchAlbums() }),
   component: Galeria,
   head: () => ({
     meta: [
@@ -30,8 +32,10 @@ export const Route = createFileRoute("/galeria")({
 const thumbs = [comunidadeImg, interiorImg, heroImg];
 
 function Galeria() {
+  const { albums } = Route.useLoaderData() as { albums: GalleryAlbum[] };
+  const categories = ["Todos", ...Array.from(new Set(albums.map((album) => album.category)))];
   const [category, setCategory] = useState("Todos");
-  const [open, setOpen] = useState<string | null>(null);
+  const [open, setOpen] = useState<GalleryAlbum | null>(null);
   const list = category === "Todos" ? albums : albums.filter((a) => a.category === category);
 
   return (
@@ -45,7 +49,7 @@ function Galeria() {
       <section className="section-y">
         <div className="container-page">
           <div className="flex flex-wrap gap-2">
-            {galleryCategories.map((cat) => (
+            {categories.map((cat) => (
               <button
                 key={cat}
                 type="button"
@@ -64,15 +68,15 @@ function Galeria() {
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {list.map((album, i) => (
-              <Reveal key={album.title} delay={i * 0.04}>
+              <Reveal key={album.slug ?? album.title} delay={i * 0.04}>
                 <button
                   type="button"
-                  onClick={() => setOpen(album.title)}
+                  onClick={() => setOpen(album)}
                   className="surface-card group block w-full overflow-hidden text-left"
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-muted">
                     <img
-                      src={thumbs[i % thumbs.length]}
+                      src={album.coverUrl ?? thumbs[i % thumbs.length]}
                       alt={`Capa do álbum ${album.title}`}
                       loading="lazy"
                       width={1600}
@@ -103,13 +107,13 @@ function Galeria() {
 
       <Dialog open={open !== null} onOpenChange={(v) => !v && setOpen(null)}>
         <DialogContent className="max-w-3xl overflow-hidden rounded-3xl p-0">
-          <DialogTitle className="px-6 pt-6 text-lg">{open}</DialogTitle>
+          <DialogTitle className="px-6 pt-6 text-lg">{open?.title ?? "Álbum"}</DialogTitle>
           <div className="grid grid-cols-2 gap-2 p-6 sm:grid-cols-3">
             {Array.from({ length: 6 }).map((_, i) => (
               <img
                 key={i}
-                src={thumbs[i % thumbs.length]}
-                alt={`Foto ${i + 1} do álbum ${open ?? ""}`}
+                src={open?.coverUrl ?? thumbs[i % thumbs.length]}
+                alt={`Foto ${i + 1} do álbum ${open?.title ?? ""}`}
                 loading="lazy"
                 width={1600}
                 height={1000}
