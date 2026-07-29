@@ -14,7 +14,7 @@ export const parish = {
   email: "secretaria@paroquiaaparecidamga.com.br",
   phone: "(44) 3267-0484",
   whatsapp: "https://wa.me/5544984230760",
-  whatsappChannel: "https://whatsapp.com/channel/",
+  whatsappChannel: "https://whatsapp.com/channel/0029Vb7VUmt4IBhKnOpEi73S",
   instagram: "https://instagram.com/pnsa_mga",
   facebook: "https://facebook.com/pnsa.maringa",
   youtube: "https://youtube.com/",
