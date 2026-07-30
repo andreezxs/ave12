@@ -18,5 +18,8 @@ export default defineConfig({
     resolve: {
       tsconfigPaths: true,
     },
+    build: {
+      outDir: ".output",
+    },
   },
 });
