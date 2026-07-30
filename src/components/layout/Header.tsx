@@ -33,7 +33,9 @@ export function Header() {
       <nav
         aria-label="Menu principal"
         className={`container-page flex items-center gap-3 rounded-3xl py-2.5 transition-all duration-500 ${
-          scrolled ? "glass glass-strong shadow-[var(--shadow-soft)]" : "glass shadow-[var(--shadow-soft)]"
+          scrolled
+            ? "glass glass-strong shadow-[var(--shadow-soft)]"
+            : "glass shadow-[var(--shadow-soft)]"
         }`}
       >
         <Link to="/" className="flex items-center gap-2.5" aria-label="Início">

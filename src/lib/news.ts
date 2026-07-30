@@ -67,7 +67,11 @@ export async function fetchNewsBySlug(slug: string): Promise<NewsPost | null> {
     return staticNews.find((post) => post.slug === slug) ?? null;
   }
 
-  const { data, error } = await supabase.from<SupabaseNewsRow>("noticias").select("*").eq("slug", slug).single();
+  const { data, error } = await supabase
+    .from<SupabaseNewsRow>("noticias")
+    .select("*")
+    .eq("slug", slug)
+    .single();
 
   if (!error && data) {
     return mapSupabaseRow(data);

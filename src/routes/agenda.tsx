@@ -39,7 +39,9 @@ function Agenda() {
 
       <section className="section-y">
         <div className="container-page">
-          <p className="text-sm text-muted-foreground">Use o botão acima para abrir o calendário completo.</p>
+          <p className="text-sm text-muted-foreground">
+            Use o botão acima para abrir o calendário completo.
+          </p>
         </div>
       </section>
     </>

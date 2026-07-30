@@ -31,12 +31,12 @@ export const nav = [
   { label: "A Paróquia", to: "/a-paroquia" },
   { label: "História", to: "/historia" },
   { label: "Notícias", to: "/noticias" },
-  { label: "Agenda", to: "/agenda" },
+  { label: "Agenda", to: parish.calendarUrl },
   { label: "AVE12", to: "/ave12" },
   { label: "Camisetas", to: "/camisetas" },
   { label: "Show de Prêmios", to: "/show-de-premios" },
   { label: "Premiações", to: "/premiacoes" },
-  { label: "Galeria", to: "/galeria" },
+  // Galeria removida
   { label: "Horários", to: "/horarios" },
   { label: "Regulamento", to: "/regulamento" },
   { label: "FAQ", to: "/faq" },
@@ -228,22 +228,14 @@ export const timeline = [
 export const schedules = [
   {
     title: "Missas na Igreja Matriz",
-    items: [
-      "sexta — 07h00",
-      "Sábado — 19h30",
-      "Domingo — 08h00, 10h00 e 18h00",
-    ],
+    items: ["sexta — 07h00", "Sábado — 19h30", "Domingo — 08h00, 10h00 e 18h00"],
   },
 
   {
     title: "Missas na Capela N.Sra de Fátima",
-    items: [
-      "Quarta — 20h00",
-      "Domingo — 10h00",
-      "Dia 13 de cada mês — 20h00",
-    ],
+    items: ["Quarta — 20h00", "Domingo — 10h00", "Dia 13 de cada mês — 20h00"],
   },
-  
+
   {
     title: "Secretaria Paroquial",
     items: [
@@ -255,11 +247,7 @@ export const schedules = [
   },
   {
     title: "Confissões",
-    items: [
-      "Quarta-feira — 14h00 às 16h00",
-      "Sexta — 08h30 às 11h00",
-      "Sábado — 08h30 às 11h00",
-    ],
+    items: ["Quarta-feira — 14h00 às 16h00", "Sexta — 08h30 às 11h00", "Sábado — 08h30 às 11h00"],
   },
   {
     title: "Devoções e terços",
@@ -272,11 +260,7 @@ export const schedules = [
   },
   {
     title: "Atendimento do Pároco",
-    items: [
-      "Quarta-feira — 14h00 às 16h00",
-      "Sexta — 08h30 às 11h00",
-      "Sábado — 08h30 às 11h00",
-    ],
+    items: ["Quarta-feira — 14h00 às 16h00", "Sexta — 08h30 às 11h00", "Sábado — 08h30 às 11h00"],
   },
   {
     title: "Batizados e Casamentos",
@@ -310,14 +294,16 @@ export const faq = [
     q: "Quero servir em uma pastoral. Por onde começo?",
     a: "Converse com a secretaria paroquial ou participe de um dos encontros de acolhida. Cada pastoral tem seu processo de formação e acompanhamento.",
   },
-  
 ];
 
 export const prizes = [
-  { title: "1º Prêmio - CARTELA CHEIA", description: "Fusca Relíquia azul, ano 1973.", highlight: true },
+  {
+    title: "1º Prêmio - CARTELA CHEIA",
+    description: "Fusca Relíquia azul, ano 1973.",
+    highlight: true,
+  },
   { title: "2º Prêmio - CARTELA CHEIA", description: "TV 50' Polegadas." },
   { title: "3º Prêmio - CARTELA CHEIA", description: "Forno elétrico." },
-
 ];
 
 export interface GalleryAlbum {
@@ -331,11 +317,21 @@ export interface GalleryAlbum {
 export const albums: GalleryAlbum[] = [
   { slug: "festa-da-padroeira", title: "Festa da Padroeira", category: "Festas", count: 128 },
   { slug: "corpus-christi", title: "Corpus Christi", category: "Eventos", count: 96 },
-  { slug: "arraia-da-mae-aparecida", title: "Arraiá da Mãe Aparecida", category: "Festas", count: 74 },
+  {
+    slug: "arraia-da-mae-aparecida",
+    title: "Arraiá da Mãe Aparecida",
+    category: "Festas",
+    count: 74,
+  },
   { slug: "show-de-premios", title: "Show de Prêmios", category: "Eventos", count: 61 },
   { slug: "missas-dominicais", title: "Missas Dominicais", category: "Missas", count: 210 },
   { slug: "sacramentos", title: "Sacramentos", category: "Sacramentos", count: 145 },
-  { slug: "comunidade-em-missao", title: "Comunidade em Missão", category: "Comunidade", count: 88 },
+  {
+    slug: "comunidade-em-missao",
+    title: "Comunidade em Missão",
+    category: "Comunidade",
+    count: 88,
+  },
   { slug: "fotos-historicas", title: "Fotos Históricas", category: "Fotos Históricas", count: 52 },
   { slug: "catequese", title: "Catequese", category: "Comunidade", count: 39 },
 ];
@@ -365,4 +361,3 @@ export function formatShortDate(iso: string) {
     month: d.toLocaleDateString("pt-BR", { month: "short" }).replace(".", ""),
   };
 }
-

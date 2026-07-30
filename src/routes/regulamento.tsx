@@ -97,7 +97,10 @@ function Regulamento() {
                       key={item}
                       className="flex gap-3 text-base leading-relaxed text-muted-foreground"
                     >
-                      <span aria-hidden className="mt-2.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                      <span
+                        aria-hidden
+                        className="mt-2.5 size-1.5 shrink-0 rounded-full bg-primary"
+                      />
                       {item}
                     </li>
                   ))}

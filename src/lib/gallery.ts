@@ -62,7 +62,9 @@ function getFacebookCoverUrl(album: FacebookAlbumRow) {
 }
 
 function buildFacebookQuery(params: Record<string, string | undefined>) {
-  return new URLSearchParams(Object.entries(params).filter(([, value]) => value != null) as [string, string][]).toString();
+  return new URLSearchParams(
+    Object.entries(params).filter(([, value]) => value != null) as [string, string][],
+  ).toString();
 }
 
 async function fetchAlbumsFromImmich(): Promise<GalleryAlbum[] | null> {
@@ -117,7 +119,10 @@ async function fetchAllFacebookPhotosCover(): Promise<string | undefined> {
     const result = (await response.json()) as FacebookPagePhotosResponse;
     return result.photos?.data?.[0]?.images?.[0]?.source;
   } catch (error) {
-    console.warn("Facebook photo cover fetch failed:", error instanceof Error ? error.message : error);
+    console.warn(
+      "Facebook photo cover fetch failed:",
+      error instanceof Error ? error.message : error,
+    );
     return undefined;
   }
 }
@@ -140,7 +145,9 @@ async function fetchAlbumsFromFacebook(): Promise<GalleryAlbum[] | null> {
       return null;
     }
 
-    const result = (await response.json()) as FacebookPagePhotosResponse & { albums?: { data?: FacebookAlbumRow[] } };
+    const result = (await response.json()) as FacebookPagePhotosResponse & {
+      albums?: { data?: FacebookAlbumRow[] };
+    };
     const pageAlbums = result.albums?.data ?? [];
     const coverUrl = await fetchAllFacebookPhotosCover();
     const totalCount = pageAlbums.reduce((sum, album) => sum + Number(album.count ?? 0), 0);
@@ -201,9 +208,7 @@ export async function fetchAlbums(): Promise<GalleryAlbum[]> {
   }
 
   const data =
-    galleryProvider === "immich"
-      ? await fetchAlbumsFromImmich()
-      : await fetchAlbumsFromServer();
+    galleryProvider === "immich" ? await fetchAlbumsFromImmich() : await fetchAlbumsFromServer();
 
   return data ?? staticAlbums;
 }

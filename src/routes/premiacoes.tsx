@@ -53,10 +53,7 @@ function Premiacoes() {
                   aria-hidden
                   className="absolute -top-10 -right-10 size-32 rounded-full bg-gradient-brand opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20"
                 />
-                <Trophy
-                  className={`size-6 ${prize.highlight ? "" : "text-primary"}`}
-                  aria-hidden
-                />
+                <Trophy className={`size-6 ${prize.highlight ? "" : "text-primary"}`} aria-hidden />
                 <h2 className="mt-5 text-sm font-semibold tracking-wide uppercase opacity-80">
                   {prize.title}
                 </h2>

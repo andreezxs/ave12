@@ -47,9 +47,21 @@ const pillars = [
 ];
 
 const clergy = [
-  { role: "Pároco", name: "Pe. Valter Antônio Brandão", note: "Nascimento: 26/02/1969 - Ordenação: 14/01/1996" },
-  { role: "Diácono", name: "Sérgio Luiz Rodrigues", note: "Nascimento: 26/07/1965 - Ordenação: 02/10/2015" },
-  { role: "Diácono", name: "Leocir da Silva", note: "Nascimento: 08/04/1962 - Ordenação: 18/08/2024" },
+  {
+    role: "Pároco",
+    name: "Pe. Valter Antônio Brandão",
+    note: "Nascimento: 26/02/1969 - Ordenação: 14/01/1996",
+  },
+  {
+    role: "Diácono",
+    name: "Sérgio Luiz Rodrigues",
+    note: "Nascimento: 26/07/1965 - Ordenação: 02/10/2015",
+  },
+  {
+    role: "Diácono",
+    name: "Leocir da Silva",
+    note: "Nascimento: 08/04/1962 - Ordenação: 18/08/2024",
+  },
 ];
 
 const communities = [
@@ -93,9 +105,9 @@ function Paroquia() {
                   longo das décadas, um dos centros de referência espiritual da região.
                 </p>
                 <p>
-                  Hoje a paróquia reúne Cebs filiais, dezenas de pastorais e movimentos, um
-                  amplo trabalho de catequese e uma atuação social que atende famílias em situação
-                  de vulnerabilidade.
+                  Hoje a paróquia reúne Cebs filiais, dezenas de pastorais e movimentos, um amplo
+                  trabalho de catequese e uma atuação social que atende famílias em situação de
+                  vulnerabilidade.
                 </p>
                 <p>
                   Nossa vida comunitária se organiza em torno da Eucaristia, da Palavra e do serviço

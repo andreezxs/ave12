@@ -69,14 +69,18 @@ function Camisetas() {
             <span className="text-xs font-semibold tracking-[0.16em] text-primary uppercase">
               Edição 2026
             </span>
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Camiseta oficial da campanha</h2>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+              Camiseta oficial da campanha
+            </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Produzida em algodão premium, com a identidade visual da campanha Jubileu de Prata. Disponível
-              nos tamanhos infantil ao XG, com estoque limitado por lote.
+              Produzida em algodão premium, com a identidade visual da campanha Jubileu de Prata.
+              Disponível nos tamanhos infantil ao XG, com estoque limitado por lote.
             </p>
 
             <p className="mt-8 text-4xl font-semibold text-gradient">R$ 35,00</p>
-            <p className="mt-1 text-sm text-muted-foreground">à vista ou parcelado na loja oficial</p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              à vista ou parcelado na loja oficial
+            </p>
 
             <ul className="mt-8 space-y-3">
               {features.map((f) => (
@@ -112,15 +116,23 @@ function Camisetas() {
                 <caption className="sr-only">Tabela de tamanhos da camiseta oficial</caption>
                 <thead className="bg-muted text-xs uppercase">
                   <tr>
-                    <th scope="col" className="px-6 py-4 font-semibold">Tamanho</th>
-                    <th scope="col" className="px-6 py-4 font-semibold">Largura do tórax</th>
-                    <th scope="col" className="px-6 py-4 font-semibold">Comprimento</th>
+                    <th scope="col" className="px-6 py-4 font-semibold">
+                      Tamanho
+                    </th>
+                    <th scope="col" className="px-6 py-4 font-semibold">
+                      Largura do tórax
+                    </th>
+                    <th scope="col" className="px-6 py-4 font-semibold">
+                      Comprimento
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {sizes.map((s) => (
                     <tr key={s.size} className="border-t border-border">
-                      <th scope="row" className="px-6 py-4 font-semibold">{s.size}</th>
+                      <th scope="row" className="px-6 py-4 font-semibold">
+                        {s.size}
+                      </th>
                       <td className="px-6 py-4 text-muted-foreground">{s.chest}</td>
                       <td className="px-6 py-4 text-muted-foreground">{s.length}</td>
                     </tr>

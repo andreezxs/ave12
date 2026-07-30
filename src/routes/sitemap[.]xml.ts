@@ -21,12 +21,12 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/a-paroquia", changefreq: "monthly", priority: "0.8" },
           { path: "/historia", changefreq: "monthly", priority: "0.7" },
           { path: "/noticias", changefreq: "daily", priority: "0.9" },
-          { path: "/agenda", changefreq: "weekly", priority: "0.9" },
+          // agenda route removed; link points to external calendar
           { path: "/ave12", changefreq: "monthly", priority: "0.8" },
           { path: "/camisetas", changefreq: "monthly", priority: "0.7" },
           { path: "/show-de-premios", changefreq: "weekly", priority: "0.9" },
           { path: "/premiacoes", changefreq: "monthly", priority: "0.7" },
-          { path: "/galeria", changefreq: "weekly", priority: "0.7" },
+          // galeria removed
           { path: "/horarios", changefreq: "monthly", priority: "0.8" },
           { path: "/regulamento", changefreq: "yearly", priority: "0.6" },
           { path: "/faq", changefreq: "monthly", priority: "0.6" },

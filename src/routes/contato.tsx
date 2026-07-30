@@ -46,14 +46,29 @@ const schema = z.object({
 });
 
 const channels = [
-  { icon: MessageCircle, label: "WhatsApp da secretaria", value: "Atendimento em horário comercial", href: parish.whatsapp },
-  { icon: Phone, label: "Telefone", value: parish.phone, href: `tel:${parish.phone.replace(/\D/g, "")}` },
+  {
+    icon: MessageCircle,
+    label: "WhatsApp da secretaria",
+    value: "Atendimento em horário comercial",
+    href: parish.whatsapp,
+  },
+  {
+    icon: Phone,
+    label: "Telefone",
+    value: parish.phone,
+    href: `tel:${parish.phone.replace(/\D/g, "")}`,
+  },
   { icon: Mail, label: "E-mail", value: parish.email, href: `mailto:${parish.email}` },
   { icon: MapPin, label: "Endereço", value: parish.address, href: parish.maps },
   { icon: Instagram, label: "Instagram", value: "Publicações diárias", href: parish.instagram },
   { icon: Facebook, label: "Facebook", value: "Avisos e transmissões", href: parish.facebook },
   { icon: Youtube, label: "YouTube", value: "Missas ao vivo", href: parish.youtube },
-  { icon: MessageCircle, label: "Canal do WhatsApp", value: "Receba os avisos oficiais", href: parish.whatsappChannel },
+  {
+    icon: MessageCircle,
+    label: "Canal do WhatsApp",
+    value: "Receba os avisos oficiais",
+    href: parish.whatsappChannel,
+  },
 ];
 
 function Contato() {
@@ -120,16 +135,18 @@ function Contato() {
                 <div className="grid gap-2">
                   <Label htmlFor="name">Nome completo</Label>
                   <Input id="name" name="name" maxLength={100} autoComplete="name" />
-                  {errors.name ? (
-                    <p className="text-xs text-destructive">{errors.name}</p>
-                  ) : null}
+                  {errors.name ? <p className="text-xs text-destructive">{errors.name}</p> : null}
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="email">E-mail</Label>
-                  <Input id="email" name="email" type="email" maxLength={255} autoComplete="email" />
-                  {errors.email ? (
-                    <p className="text-xs text-destructive">{errors.email}</p>
-                  ) : null}
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    maxLength={255}
+                    autoComplete="email"
+                  />
+                  {errors.email ? <p className="text-xs text-destructive">{errors.email}</p> : null}
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="subject">Assunto</Label>

@@ -50,7 +50,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           Esta página não carregou.
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Ocorreu um problema da nossa parte. Você pode tentar atualizar a página ou voltar para a página inicial.
+          Ocorreu um problema da nossa parte. Você pode tentar atualizar a página ou voltar para a
+          página inicial.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -148,4 +149,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

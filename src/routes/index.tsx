@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  ArrowRight,
   CalendarDays,
   Clock,
   Instagram,
@@ -9,17 +8,15 @@ import {
   Newspaper,
   Phone,
   Play,
-  Images,
   Quote,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionTitle } from "@/components/site/Section";
-import { albums, agenda, parish, formatDate, formatShortDate, schedules } from "@/data/site";
+import { agenda, parish, formatDate, formatShortDate, schedules } from "@/data/site";
 import { fetchNews } from "@/lib/news";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
-import comunidadeImg from "@/assets/comunidade.jpg";
 
 export const Route = createFileRoute("/")({
   loader: async () => ({ news: await fetchNews() }),
@@ -48,14 +45,21 @@ const covers = { igreja: heroImg, interior: interiorImg, comunidade: comunidadeI
 const quickCards = [
   { icon: Clock, title: "Missas", text: "Sex 7h · Sáb 19h30 · Dom 8h, 18h", to: "/horarios" },
   { icon: Phone, title: "Secretaria", text: "Seg–Sex 8h00–11h30 e 13h00–18h00", to: "/horarios" },
-  { icon: CalendarDays, title: "Confissões", text: "Qua 14h–16h · Sex 8h30–11h · Sab 8h30-11h", to: "/horarios" },
+  {
+    icon: CalendarDays,
+    title: "Confissões",
+    text: "Qua 14h–16h · Sex 8h30–11h · Sab 8h30-11h",
+    to: "/horarios",
+  },
   { icon: MapPin, title: "Localização", text: `${parish.city} · Como chegar`, href: parish.maps },
   { icon: MessageCircle, title: "WhatsApp", text: "Fale com a secretaria", href: parish.whatsapp },
   { icon: Instagram, title: "Instagram", text: "Acompanhe o dia a dia", href: parish.instagram },
 ];
 
 function Home() {
-  const { news } = Route.useLoaderData() as { news: Array<{ slug: string } & Record<string, unknown>> };
+  const { news } = Route.useLoaderData() as {
+    news: Array<{ slug: string } & Record<string, unknown>>;
+  };
   const latest = news.slice(0, 3);
 
   return (
@@ -81,8 +85,8 @@ function Home() {
               Paróquia Nossa Senhora Aparecida
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[oklch(1_0_0/78%)]">
-              Uma comunidade de fé em {parish.city}. Aqui você encontra a agenda das celebrações,
-              as notícias da paróquia e todos os canais para caminhar conosco.
+              Uma comunidade de fé em {parish.city}. Aqui você encontra a agenda das celebrações, as
+              notícias da paróquia e todos os canais para caminhar conosco.
             </p>
           </Reveal>
           <Reveal delay={0.12} className="mt-9 flex flex-wrap gap-3">
@@ -123,7 +127,9 @@ function Home() {
                     <card.icon className="size-5" aria-hidden />
                   </span>
                   <h3 className="mt-5 text-base font-semibold">{card.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{card.text}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                    {card.text}
+                  </p>
                 </>
               );
               return (
@@ -259,43 +265,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section-y bg-surface">
-        <div className="container-page">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionTitle eyebrow="Galeria" title="Últimos álbuns" />
-            <Button asChild variant="ghost" className="rounded-full">
-              <Link to="/galeria">
-                Ver galeria <ArrowRight className="size-4" aria-hidden />
-              </Link>
-            </Button>
-          </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {albums.slice(0, 3).map((album, i) => (
-              <Reveal key={album.title} delay={i * 0.06}>
-                <Link to="/galeria" className="surface-card group block overflow-hidden">
-                  <div className="aspect-[4/3] overflow-hidden bg-muted">
-                    <img
-                      src={comunidadeImg}
-                      alt={`Álbum ${album.title}`}
-                      loading="lazy"
-                      width={1600}
-                      height={1000}
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex items-center justify-between p-5">
-                    <div>
-                      <h3 className="text-base font-semibold">{album.title}</h3>
-                      <p className="text-sm text-muted-foreground">{album.count} fotos</p>
-                    </div>
-                    <Images className="size-5 text-muted-foreground" aria-hidden />
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Galeria removida */}
 
       <section className="section-y">
         <div className="container-page">

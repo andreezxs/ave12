@@ -3,7 +3,12 @@ import { Ticket, CalendarDays, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { parish, prizes } from "@/data/site";
 
 export const Route = createFileRoute("/show-de-premios")({
@@ -28,7 +33,11 @@ export const Route = createFileRoute("/show-de-premios")({
 const info = [
   { icon: CalendarDays, label: "Data", value: "11 de outubro de 2026" },
   { icon: Clock, label: "Horário", value: "A partir das 14h00" },
-  { icon: MapPin, label: "Local", value: "Salão paroquial - Paroquia N.Sra Aparecida, Vila Esperança-Maringá" },
+  {
+    icon: MapPin,
+    label: "Local",
+    value: "Salão paroquial - Paroquia N.Sra Aparecida, Vila Esperança-Maringá",
+  },
   { icon: Ticket, label: "Cartela", value: "R$ 25,00 por cartela" },
 ];
 
