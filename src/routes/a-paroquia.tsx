@@ -48,16 +48,19 @@ const pillars = [
 
 const clergy = [
   {
+    id: "padre-valter",
     role: "Pároco",
     name: "Pe. Valter Antônio Brandão",
     note: "Nascimento: 26/02/1969 - Ordenação: 14/01/1996",
   },
   {
+    id: "diacono-sergio",
     role: "Diácono",
     name: "Sérgio Luiz Rodrigues",
     note: "Nascimento: 26/07/1965 - Ordenação: 02/10/2015",
   },
   {
+    id: "diacono-leocir",
     role: "Diácono",
     name: "Leocir da Silva",
     note: "Nascimento: 08/04/1962 - Ordenação: 18/08/2024",
@@ -172,7 +175,7 @@ function Paroquia() {
           <SectionTitle eyebrow="Clero" title="Conheça o padre e diáconos..." />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {clergy.map((c, i) => (
-              <Reveal key={c.role} delay={i * 0.06}>
+              <Reveal key={c.id} delay={i * 0.06}>
                 <article className="surface-card h-full p-7">
                   <span className="text-xs font-semibold tracking-wide text-primary uppercase">
                     {c.role}

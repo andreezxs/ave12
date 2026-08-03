@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  ArrowRight,
   CalendarDays,
   Clock,
   Instagram,
@@ -7,8 +8,8 @@ import {
   MessageCircle,
   Newspaper,
   Phone,
-  Play,
   Quote,
+  Radio,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
@@ -17,6 +18,7 @@ import { agenda, parish, formatDate, formatShortDate, schedules } from "@/data/s
 import { fetchNews } from "@/lib/news";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
+import comunidadeImg from "@/assets/comunidade.jpg";
 
 export const Route = createFileRoute("/")({
   loader: async () => ({ news: await fetchNews() }),
@@ -27,7 +29,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Notícias, agenda litúrgica, horários de missas, galeria de fotos, campanha AVE12 e Show de Prêmios da Paróquia Nossa Senhora Aparecida.",
+          "Notícias, agenda litúrgica, horários de missas, galeria de fotos, Jubileu de Prata e Show de Prêmios da Paróquia Nossa Senhora Aparecida.",
       },
       { property: "og:title", content: "Paróquia Nossa Senhora Aparecida — Site oficial" },
       {
@@ -44,16 +46,36 @@ const covers = { igreja: heroImg, interior: interiorImg, comunidade: comunidadeI
 
 const quickCards = [
   { icon: Clock, title: "Missas", text: "Sex 7h · Sáb 19h30 · Dom 8h, 18h", to: "/horarios" },
-  { icon: Phone, title: "Secretaria", text: "Seg–Sex 8h00–11h30 e 13h00–18h00", to: "/horarios" },
+  {
+    icon: Phone,
+    title: "Secretaria",
+    text: `${parish.phone} · Seg–sex 08h–11h30, 13h30–18h · Sáb 08h–12h`,
+    to: "/horarios",
+  },
   {
     icon: CalendarDays,
     title: "Confissões",
-    text: "Qua 14h–16h · Sex 8h30–11h · Sab 8h30-11h",
+    text: "Qua 14h–16h · Sex 8h30–11h · Sáb 8h30–11h",
     to: "/horarios",
   },
-  { icon: MapPin, title: "Localização", text: `${parish.city} · Como chegar`, href: parish.maps },
-  { icon: MessageCircle, title: "WhatsApp", text: "Fale com a secretaria", href: parish.whatsapp },
-  { icon: Instagram, title: "Instagram", text: "Acompanhe o dia a dia", href: parish.instagram },
+  {
+    icon: MapPin,
+    title: "Localização",
+    text: "Praça Nossa Senhora Aparecida · Vila Esperança",
+    href: parish.maps,
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    text: "Fale com a secretaria",
+    href: parish.whatsapp,
+  },
+  {
+    icon: Instagram,
+    title: "Instagram",
+    text: "@pnsa_mga",
+    href: parish.instagram,
+  },
 ];
 
 function Home() {
@@ -79,7 +101,7 @@ function Home() {
         <div className="container-page relative flex min-h-[92vh] flex-col justify-end pt-36 pb-20">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-[oklch(1_0_0/25%)] bg-[oklch(1_0_0/12%)] px-4 py-1.5 text-xs font-medium tracking-wide text-[oklch(1_0_0)] uppercase backdrop-blur-md">
-              Portal Oficial · Campanha AVE12
+              Portal Oficial · Jubileu de Prata
             </span>
             <h1 className="mt-6 max-w-4xl text-4xl leading-[1.05] font-semibold text-[oklch(1_0_0)] sm:text-6xl md:text-7xl">
               Paróquia Nossa Senhora Aparecida
@@ -98,6 +120,11 @@ function Home() {
             <Button asChild size="lg" variant="secondary" className="rounded-full">
               <a href={parish.ticketsUrl} target="_blank" rel="noopener noreferrer">
                 Comprar cartela
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="secondary" className="rounded-full">
+              <a href="https://colmeiafm.com.br/" target="_blank" rel="noopener noreferrer">
+                Ouvir rádio <Radio className="size-4" aria-hidden />
               </a>
             </Button>
             <Button
@@ -120,6 +147,22 @@ function Home() {
             description="Os serviços mais procurados da comunidade, sempre à mão."
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal delay={0.02}>
+              <a
+                href="https://colmeiafm.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="surface-card block h-full p-6"
+              >
+                <span className="flex size-11 items-center justify-center rounded-2xl bg-accent text-accent-foreground">
+                  <Radio className="size-5" aria-hidden />
+                </span>
+                <h3 className="mt-5 text-base font-semibold">Rádio Colmeia</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                  Ouça ao vivo a programação da Rádio Colmeia e entre em contato com a comunidade.
+                </p>
+              </a>
+            </Reveal>
             {quickCards.map((card, i) => {
               const content = (
                 <>
@@ -221,7 +264,7 @@ function Home() {
       <section className="section-y">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <div className="surface-card relative overflow-hidden">
+            <div className="surface-card overflow-hidden">
               <img
                 src={interiorImg}
                 alt="Interior da igreja matriz durante a celebração"
@@ -230,22 +273,11 @@ function Home() {
                 height={1000}
                 className="aspect-video size-full object-cover"
               />
-              <a
-                href={parish.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0 flex items-center justify-center"
-                aria-label="Assistir ao vídeo institucional no YouTube"
-              >
-                <span className="glass flex size-20 items-center justify-center rounded-full text-foreground shadow-[var(--shadow-lift)] transition-transform duration-300 hover:scale-110">
-                  <Play className="size-7" aria-hidden />
-                </span>
-              </a>
             </div>
           </Reveal>
           <div>
             <SectionTitle
-              eyebrow="Vídeo institucional"
+              eyebrow="Institucional"
               title="Conheça a nossa casa"
               description="Um convite a caminhar com a comunidade: a história, as pastorais e as pessoas que fazem desta paróquia um lar."
             />
@@ -272,7 +304,7 @@ function Home() {
           <div className="relative overflow-hidden rounded-4xl bg-gradient-brand px-8 py-16 text-center md:px-16 md:py-24">
             <Reveal>
               <span className="text-xs font-semibold tracking-[0.2em] text-primary-foreground/80 uppercase">
-                Campanha AVE12
+                Jubileu de Prata
               </span>
               <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold text-primary-foreground md:text-5xl">
                 Doze meses sustentando a missão da nossa paróquia
@@ -283,7 +315,7 @@ function Home() {
               </p>
               <div className="mt-9 flex flex-wrap justify-center gap-3">
                 <Button asChild size="lg" variant="secondary" className="rounded-full">
-                  <Link to="/ave12">Conhecer a campanha</Link>
+                  <Link to="/ave12">Conhecer o Jubileu de Prata</Link>
                 </Button>
                 <Button
                   asChild

@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as Admin_rootRouteImport } from './routes/admin/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AParoquiaRouteImport } from './routes/a-paroquia'
 import { Route as AgendaRouteImport } from './routes/agenda'
@@ -24,29 +23,9 @@ import { Route as PremiacoesRouteImport } from './routes/premiacoes'
 import { Route as RegulamentoRouteImport } from './routes/regulamento'
 import { Route as ShowDePremiosRouteImport } from './routes/show-de-premios'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as AdminDashboardRouteImport } from './routes/admin/dashboard'
-import { Route as AdminLoginRouteImport } from './routes/admin/login'
-import { Route as AdminLogoutRouteImport } from './routes/admin/logout'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias/index'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias/$slug'
-import { Route as AdminAgendaIndexRouteImport } from './routes/admin/agenda/index'
-import { Route as AdminConfiguracoesIndexRouteImport } from './routes/admin/configuracoes/index'
-import { Route as AdminEventosIndexRouteImport } from './routes/admin/eventos/index'
-import { Route as AdminEventosNovoRouteImport } from './routes/admin/eventos/novo'
-import { Route as AdminGaleriaIndexRouteImport } from './routes/admin/galeria/index'
-import { Route as AdminGaleriaIdRouteImport } from './routes/admin/galeria/$id'
-import { Route as AdminGaleriaNovoRouteImport } from './routes/admin/galeria/novo'
-import { Route as AdminNoticiasIndexRouteImport } from './routes/admin/noticias/index'
-import { Route as AdminNoticiasIdRouteImport } from './routes/admin/noticias/$id'
-import { Route as AdminNoticiasNovaRouteImport } from './routes/admin/noticias/nova'
-import { Route as AdminUsuariosIndexRouteImport } from './routes/admin/usuarios/index'
-import { Route as AdminUsuariosIdRouteImport } from './routes/admin/usuarios/$id'
-import { Route as AdminUsuariosNovoRouteImport } from './routes/admin/usuarios/novo'
 
-const Admin_rootRoute = Admin_rootRouteImport.update({
-  id: '/admin/__root',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -117,21 +96,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminDashboardRoute = AdminDashboardRouteImport.update({
-  id: '/admin/dashboard',
-  path: '/admin/dashboard',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminLoginRoute = AdminLoginRouteImport.update({
-  id: '/admin/login',
-  path: '/admin/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminLogoutRoute = AdminLogoutRouteImport.update({
-  id: '/admin/logout',
-  path: '/admin/logout',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
   id: '/noticias/',
   path: '/noticias/',
@@ -140,71 +104,6 @@ const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
 const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
   id: '/noticias/$slug',
   path: '/noticias/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminAgendaIndexRoute = AdminAgendaIndexRouteImport.update({
-  id: '/admin/agenda/',
-  path: '/admin/agenda/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminConfiguracoesIndexRoute = AdminConfiguracoesIndexRouteImport.update({
-  id: '/admin/configuracoes/',
-  path: '/admin/configuracoes/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminEventosIndexRoute = AdminEventosIndexRouteImport.update({
-  id: '/admin/eventos/',
-  path: '/admin/eventos/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminEventosNovoRoute = AdminEventosNovoRouteImport.update({
-  id: '/admin/eventos/novo',
-  path: '/admin/eventos/novo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminGaleriaIndexRoute = AdminGaleriaIndexRouteImport.update({
-  id: '/admin/galeria/',
-  path: '/admin/galeria/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminGaleriaIdRoute = AdminGaleriaIdRouteImport.update({
-  id: '/admin/galeria/$id',
-  path: '/admin/galeria/$id',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminGaleriaNovoRoute = AdminGaleriaNovoRouteImport.update({
-  id: '/admin/galeria/novo',
-  path: '/admin/galeria/novo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminNoticiasIndexRoute = AdminNoticiasIndexRouteImport.update({
-  id: '/admin/noticias/',
-  path: '/admin/noticias/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminNoticiasIdRoute = AdminNoticiasIdRouteImport.update({
-  id: '/admin/noticias/$id',
-  path: '/admin/noticias/$id',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminNoticiasNovaRoute = AdminNoticiasNovaRouteImport.update({
-  id: '/admin/noticias/nova',
-  path: '/admin/noticias/nova',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminUsuariosIndexRoute = AdminUsuariosIndexRouteImport.update({
-  id: '/admin/usuarios/',
-  path: '/admin/usuarios/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminUsuariosIdRoute = AdminUsuariosIdRouteImport.update({
-  id: '/admin/usuarios/$id',
-  path: '/admin/usuarios/$id',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminUsuariosNovoRoute = AdminUsuariosNovoRouteImport.update({
-  id: '/admin/usuarios/novo',
-  path: '/admin/usuarios/novo',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -223,25 +122,8 @@ export interface FileRoutesByFullPath {
   '/regulamento': typeof RegulamentoRoute
   '/show-de-premios': typeof ShowDePremiosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/admin': typeof Admin_rootRoute
-  '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/login': typeof AdminLoginRoute
-  '/admin/logout': typeof AdminLogoutRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/': typeof NoticiasIndexRoute
-  '/admin/eventos/novo': typeof AdminEventosNovoRoute
-  '/admin/galeria/$id': typeof AdminGaleriaIdRoute
-  '/admin/galeria/novo': typeof AdminGaleriaNovoRoute
-  '/admin/noticias/$id': typeof AdminNoticiasIdRoute
-  '/admin/noticias/nova': typeof AdminNoticiasNovaRoute
-  '/admin/usuarios/$id': typeof AdminUsuariosIdRoute
-  '/admin/usuarios/novo': typeof AdminUsuariosNovoRoute
-  '/admin/agenda/': typeof AdminAgendaIndexRoute
-  '/admin/configuracoes/': typeof AdminConfiguracoesIndexRoute
-  '/admin/eventos/': typeof AdminEventosIndexRoute
-  '/admin/galeria/': typeof AdminGaleriaIndexRoute
-  '/admin/noticias/': typeof AdminNoticiasIndexRoute
-  '/admin/usuarios/': typeof AdminUsuariosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -258,25 +140,8 @@ export interface FileRoutesByTo {
   '/regulamento': typeof RegulamentoRoute
   '/show-de-premios': typeof ShowDePremiosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/admin': typeof Admin_rootRoute
-  '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/login': typeof AdminLoginRoute
-  '/admin/logout': typeof AdminLogoutRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias': typeof NoticiasIndexRoute
-  '/admin/eventos/novo': typeof AdminEventosNovoRoute
-  '/admin/galeria/$id': typeof AdminGaleriaIdRoute
-  '/admin/galeria/novo': typeof AdminGaleriaNovoRoute
-  '/admin/noticias/$id': typeof AdminNoticiasIdRoute
-  '/admin/noticias/nova': typeof AdminNoticiasNovaRoute
-  '/admin/usuarios/$id': typeof AdminUsuariosIdRoute
-  '/admin/usuarios/novo': typeof AdminUsuariosNovoRoute
-  '/admin/agenda': typeof AdminAgendaIndexRoute
-  '/admin/configuracoes': typeof AdminConfiguracoesIndexRoute
-  '/admin/eventos': typeof AdminEventosIndexRoute
-  '/admin/galeria': typeof AdminGaleriaIndexRoute
-  '/admin/noticias': typeof AdminNoticiasIndexRoute
-  '/admin/usuarios': typeof AdminUsuariosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -294,25 +159,8 @@ export interface FileRoutesById {
   '/regulamento': typeof RegulamentoRoute
   '/show-de-premios': typeof ShowDePremiosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/admin/__root': typeof Admin_rootRoute
-  '/admin/dashboard': typeof AdminDashboardRoute
-  '/admin/login': typeof AdminLoginRoute
-  '/admin/logout': typeof AdminLogoutRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/': typeof NoticiasIndexRoute
-  '/admin/eventos/novo': typeof AdminEventosNovoRoute
-  '/admin/galeria/$id': typeof AdminGaleriaIdRoute
-  '/admin/galeria/novo': typeof AdminGaleriaNovoRoute
-  '/admin/noticias/$id': typeof AdminNoticiasIdRoute
-  '/admin/noticias/nova': typeof AdminNoticiasNovaRoute
-  '/admin/usuarios/$id': typeof AdminUsuariosIdRoute
-  '/admin/usuarios/novo': typeof AdminUsuariosNovoRoute
-  '/admin/agenda/': typeof AdminAgendaIndexRoute
-  '/admin/configuracoes/': typeof AdminConfiguracoesIndexRoute
-  '/admin/eventos/': typeof AdminEventosIndexRoute
-  '/admin/galeria/': typeof AdminGaleriaIndexRoute
-  '/admin/noticias/': typeof AdminNoticiasIndexRoute
-  '/admin/usuarios/': typeof AdminUsuariosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -331,25 +179,8 @@ export interface FileRouteTypes {
     | '/regulamento'
     | '/show-de-premios'
     | '/sitemap.xml'
-    | '/admin'
-    | '/admin/dashboard'
-    | '/admin/login'
-    | '/admin/logout'
     | '/noticias/$slug'
     | '/noticias/'
-    | '/admin/eventos/novo'
-    | '/admin/galeria/$id'
-    | '/admin/galeria/novo'
-    | '/admin/noticias/$id'
-    | '/admin/noticias/nova'
-    | '/admin/usuarios/$id'
-    | '/admin/usuarios/novo'
-    | '/admin/agenda/'
-    | '/admin/configuracoes/'
-    | '/admin/eventos/'
-    | '/admin/galeria/'
-    | '/admin/noticias/'
-    | '/admin/usuarios/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -366,25 +197,8 @@ export interface FileRouteTypes {
     | '/regulamento'
     | '/show-de-premios'
     | '/sitemap.xml'
-    | '/admin'
-    | '/admin/dashboard'
-    | '/admin/login'
-    | '/admin/logout'
     | '/noticias/$slug'
     | '/noticias'
-    | '/admin/eventos/novo'
-    | '/admin/galeria/$id'
-    | '/admin/galeria/novo'
-    | '/admin/noticias/$id'
-    | '/admin/noticias/nova'
-    | '/admin/usuarios/$id'
-    | '/admin/usuarios/novo'
-    | '/admin/agenda'
-    | '/admin/configuracoes'
-    | '/admin/eventos'
-    | '/admin/galeria'
-    | '/admin/noticias'
-    | '/admin/usuarios'
   id:
     | '__root__'
     | '/'
@@ -401,25 +215,8 @@ export interface FileRouteTypes {
     | '/regulamento'
     | '/show-de-premios'
     | '/sitemap.xml'
-    | '/admin/__root'
-    | '/admin/dashboard'
-    | '/admin/login'
-    | '/admin/logout'
     | '/noticias/$slug'
     | '/noticias/'
-    | '/admin/eventos/novo'
-    | '/admin/galeria/$id'
-    | '/admin/galeria/novo'
-    | '/admin/noticias/$id'
-    | '/admin/noticias/nova'
-    | '/admin/usuarios/$id'
-    | '/admin/usuarios/novo'
-    | '/admin/agenda/'
-    | '/admin/configuracoes/'
-    | '/admin/eventos/'
-    | '/admin/galeria/'
-    | '/admin/noticias/'
-    | '/admin/usuarios/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -437,36 +234,12 @@ export interface RootRouteChildren {
   RegulamentoRoute: typeof RegulamentoRoute
   ShowDePremiosRoute: typeof ShowDePremiosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  Admin_rootRoute: typeof Admin_rootRoute
-  AdminDashboardRoute: typeof AdminDashboardRoute
-  AdminLoginRoute: typeof AdminLoginRoute
-  AdminLogoutRoute: typeof AdminLogoutRoute
   NoticiasSlugRoute: typeof NoticiasSlugRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
-  AdminEventosNovoRoute: typeof AdminEventosNovoRoute
-  AdminGaleriaIdRoute: typeof AdminGaleriaIdRoute
-  AdminGaleriaNovoRoute: typeof AdminGaleriaNovoRoute
-  AdminNoticiasIdRoute: typeof AdminNoticiasIdRoute
-  AdminNoticiasNovaRoute: typeof AdminNoticiasNovaRoute
-  AdminUsuariosIdRoute: typeof AdminUsuariosIdRoute
-  AdminUsuariosNovoRoute: typeof AdminUsuariosNovoRoute
-  AdminAgendaIndexRoute: typeof AdminAgendaIndexRoute
-  AdminConfiguracoesIndexRoute: typeof AdminConfiguracoesIndexRoute
-  AdminEventosIndexRoute: typeof AdminEventosIndexRoute
-  AdminGaleriaIndexRoute: typeof AdminGaleriaIndexRoute
-  AdminNoticiasIndexRoute: typeof AdminNoticiasIndexRoute
-  AdminUsuariosIndexRoute: typeof AdminUsuariosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/admin/__root': {
-      id: '/admin/__root'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof Admin_rootRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -565,27 +338,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/dashboard': {
-      id: '/admin/dashboard'
-      path: '/admin/dashboard'
-      fullPath: '/admin/dashboard'
-      preLoaderRoute: typeof AdminDashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/login': {
-      id: '/admin/login'
-      path: '/admin/login'
-      fullPath: '/admin/login'
-      preLoaderRoute: typeof AdminLoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/logout': {
-      id: '/admin/logout'
-      path: '/admin/logout'
-      fullPath: '/admin/logout'
-      preLoaderRoute: typeof AdminLogoutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/noticias/': {
       id: '/noticias/'
       path: '/noticias'
@@ -598,97 +350,6 @@ declare module '@tanstack/react-router' {
       path: '/noticias/$slug'
       fullPath: '/noticias/$slug'
       preLoaderRoute: typeof NoticiasSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/agenda/': {
-      id: '/admin/agenda/'
-      path: '/admin/agenda'
-      fullPath: '/admin/agenda/'
-      preLoaderRoute: typeof AdminAgendaIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/configuracoes/': {
-      id: '/admin/configuracoes/'
-      path: '/admin/configuracoes'
-      fullPath: '/admin/configuracoes/'
-      preLoaderRoute: typeof AdminConfiguracoesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/eventos/': {
-      id: '/admin/eventos/'
-      path: '/admin/eventos'
-      fullPath: '/admin/eventos/'
-      preLoaderRoute: typeof AdminEventosIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/eventos/novo': {
-      id: '/admin/eventos/novo'
-      path: '/admin/eventos/novo'
-      fullPath: '/admin/eventos/novo'
-      preLoaderRoute: typeof AdminEventosNovoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/galeria/': {
-      id: '/admin/galeria/'
-      path: '/admin/galeria'
-      fullPath: '/admin/galeria/'
-      preLoaderRoute: typeof AdminGaleriaIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/galeria/$id': {
-      id: '/admin/galeria/$id'
-      path: '/admin/galeria/$id'
-      fullPath: '/admin/galeria/$id'
-      preLoaderRoute: typeof AdminGaleriaIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/galeria/novo': {
-      id: '/admin/galeria/novo'
-      path: '/admin/galeria/novo'
-      fullPath: '/admin/galeria/novo'
-      preLoaderRoute: typeof AdminGaleriaNovoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/noticias/': {
-      id: '/admin/noticias/'
-      path: '/admin/noticias'
-      fullPath: '/admin/noticias/'
-      preLoaderRoute: typeof AdminNoticiasIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/noticias/$id': {
-      id: '/admin/noticias/$id'
-      path: '/admin/noticias/$id'
-      fullPath: '/admin/noticias/$id'
-      preLoaderRoute: typeof AdminNoticiasIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/noticias/nova': {
-      id: '/admin/noticias/nova'
-      path: '/admin/noticias/nova'
-      fullPath: '/admin/noticias/nova'
-      preLoaderRoute: typeof AdminNoticiasNovaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/usuarios/': {
-      id: '/admin/usuarios/'
-      path: '/admin/usuarios'
-      fullPath: '/admin/usuarios/'
-      preLoaderRoute: typeof AdminUsuariosIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/usuarios/$id': {
-      id: '/admin/usuarios/$id'
-      path: '/admin/usuarios/$id'
-      fullPath: '/admin/usuarios/$id'
-      preLoaderRoute: typeof AdminUsuariosIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/admin/usuarios/novo': {
-      id: '/admin/usuarios/novo'
-      path: '/admin/usuarios/novo'
-      fullPath: '/admin/usuarios/novo'
-      preLoaderRoute: typeof AdminUsuariosNovoRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -709,25 +370,8 @@ const rootRouteChildren: RootRouteChildren = {
   RegulamentoRoute: RegulamentoRoute,
   ShowDePremiosRoute: ShowDePremiosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  Admin_rootRoute: Admin_rootRoute,
-  AdminDashboardRoute: AdminDashboardRoute,
-  AdminLoginRoute: AdminLoginRoute,
-  AdminLogoutRoute: AdminLogoutRoute,
   NoticiasSlugRoute: NoticiasSlugRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
-  AdminEventosNovoRoute: AdminEventosNovoRoute,
-  AdminGaleriaIdRoute: AdminGaleriaIdRoute,
-  AdminGaleriaNovoRoute: AdminGaleriaNovoRoute,
-  AdminNoticiasIdRoute: AdminNoticiasIdRoute,
-  AdminNoticiasNovaRoute: AdminNoticiasNovaRoute,
-  AdminUsuariosIdRoute: AdminUsuariosIdRoute,
-  AdminUsuariosNovoRoute: AdminUsuariosNovoRoute,
-  AdminAgendaIndexRoute: AdminAgendaIndexRoute,
-  AdminConfiguracoesIndexRoute: AdminConfiguracoesIndexRoute,
-  AdminEventosIndexRoute: AdminEventosIndexRoute,
-  AdminGaleriaIndexRoute: AdminGaleriaIndexRoute,
-  AdminNoticiasIndexRoute: AdminNoticiasIndexRoute,
-  AdminUsuariosIndexRoute: AdminUsuariosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

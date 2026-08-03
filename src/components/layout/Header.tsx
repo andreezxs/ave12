@@ -43,8 +43,8 @@ export function Header() {
             <img src="/favicon.ico" alt="Ícone da paróquia" className="size-4.5" />
           </span>
           <span className="hidden leading-tight sm:block">
-            <span className="block text-sm font-semibold">N. Sra. Aparecida</span>
-            <span className="block text-[11px] text-muted-foreground">Portal Oficial · AVE12</span>
+            <span className="block text-sm font-semibold">Paróquia N. Sra. Aparecida</span>
+            <span className="block text-[11px] text-muted-foreground">Portal Oficial · Missas · Contato</span>
           </span>
         </Link>
 

@@ -49,24 +49,24 @@ const channels = [
   {
     icon: MessageCircle,
     label: "WhatsApp da secretaria",
-    value: "Atendimento em horário comercial",
+    value: `${parish.phone} · Atendimento de segunda a sexta`,
     href: parish.whatsapp,
   },
   {
     icon: Phone,
     label: "Telefone",
-    value: parish.phone,
+    value: `${parish.phone} · Secretaria paroquial`,
     href: `tel:${parish.phone.replace(/\D/g, "")}`,
   },
   { icon: Mail, label: "E-mail", value: parish.email, href: `mailto:${parish.email}` },
   { icon: MapPin, label: "Endereço", value: parish.address, href: parish.maps },
-  { icon: Instagram, label: "Instagram", value: "Publicações diárias", href: parish.instagram },
-  { icon: Facebook, label: "Facebook", value: "Avisos e transmissões", href: parish.facebook },
-  { icon: Youtube, label: "YouTube", value: "Missas ao vivo", href: parish.youtube },
+  { icon: Instagram, label: "Instagram", value: "@pnsa_mga", href: parish.instagram },
+  { icon: Facebook, label: "Facebook", value: "@pnsa.maringa", href: parish.facebook },
+  { icon: Youtube, label: "YouTube", value: "Missas e mensagens", href: parish.youtube },
   {
     icon: MessageCircle,
     label: "Canal do WhatsApp",
-    value: "Receba os avisos oficiais",
+    value: "Avisos oficiais da paróquia",
     href: parish.whatsappChannel,
   },
 ];
@@ -174,7 +174,7 @@ function Contato() {
                   className="mt-4 flex items-center gap-2 rounded-2xl bg-accent p-4 text-sm text-accent-foreground"
                 >
                   <CheckCircle2 className="size-4.5" aria-hidden />
-                  Mensagem validada. O envio será ativado junto com o painel administrativo.
+                  Mensagem validada. O envio será ativado em breve.
                 </p>
               ) : null}
             </form>

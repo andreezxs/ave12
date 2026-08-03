@@ -15,7 +15,7 @@ export function SectionTitle({
   return (
     <Reveal className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       {eyebrow ? (
-        <span className="inline-flex items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground uppercase">
+        <span className="inline-flex items-center rounded-full border border-primary/15 bg-accent px-3 py-1 text-xs font-medium tracking-[0.2em] text-primary uppercase">
           {eyebrow}
         </span>
       ) : null}
@@ -39,7 +39,7 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <header className="relative overflow-hidden border-b border-border bg-surface pt-32 pb-16 md:pt-40 md:pb-24">
+    <header className="relative overflow-hidden border-b border-border bg-[linear-gradient(135deg,oklch(0.98_0.01_245),oklch(1_0_0))] pt-32 pb-16 md:pt-40 md:pb-24">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 h-96 w-[52rem] -translate-x-1/2 rounded-full opacity-20 blur-3xl bg-gradient-brand"

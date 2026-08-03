@@ -36,7 +36,7 @@ const info = [
   {
     icon: MapPin,
     label: "Local",
-    value: "Salão paroquial - Paroquia N.Sra Aparecida, Vila Esperança-Maringá",
+    value: parish.address,
   },
   { icon: Ticket, label: "Cartela", value: "R$ 25,00 por cartela" },
 ];
@@ -72,6 +72,11 @@ function ShowDePremios() {
           <Button asChild size="lg" className="rounded-full">
             <a href={parish.ticketsUrl} target="_blank" rel="noopener noreferrer">
               <Ticket className="size-4" aria-hidden /> Comprar cartela
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="rounded-full">
+            <a href={parish.whatsapp} target="_blank" rel="noopener noreferrer">
+              Falar com a secretaria
             </a>
           </Button>
           <Button asChild size="lg" variant="outline" className="rounded-full">

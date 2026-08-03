@@ -14,7 +14,7 @@ export const Route = createFileRoute("/ave12")({
       {
         name: "description",
         content:
-          "Conheça o Jubileu de prata: de 2002 - 2027, celebrando 25 anos de missão da Paróquia Nossa Senhora Aparecida.",
+          "Conheça o Jubileu de Prata: celebrando 25 anos de missão da Paróquia Nossa Senhora Aparecida.",
       },
       { property: "og:title", content: "Jubileu de Prata - Paróquia Nossa Senhora Aparecida" },
       {
@@ -50,8 +50,8 @@ function Ave12() {
   return (
     <>
       <PageHero
-        eyebrow="Campanha"
-        title="AVE12"
+        eyebrow="Jubileu de Prata"
+        title="Jubileu de Prata"
         description="Doze meses. Uma comunidade. Um compromisso comum com a missão da Paróquia Nossa Senhora Aparecida."
       >
         <div className="flex flex-wrap gap-3">
@@ -62,7 +62,7 @@ function Ave12() {
           </Button>
           <Button asChild size="lg" variant="outline" className="rounded-full">
             <a href={parish.shopUrl} target="_blank" rel="noopener noreferrer">
-              Comprar camiseta AVE12
+              Comprar camiseta do Jubileu de Prata
             </a>
           </Button>
         </div>
@@ -89,7 +89,7 @@ function Ave12() {
           <Reveal>
             <img
               src={comunidadeImg}
-              alt="Comunidade reunida em ação da campanha AVE12"
+              alt="Comunidade reunida em ação do Jubileu de Prata"
               loading="lazy"
               width={1600}
               height={1000}
@@ -98,23 +98,28 @@ function Ave12() {
           </Reveal>
           <div>
             <SectionTitle
-              eyebrow="Transparência"
-              title="Prestação de contas"
-              description="Cada real recebido é registrado e publicado. Esta área receberá os relatórios periódicos aprovados pelo conselho econômico."
+              eyebrow="Oração"
+              title="Oração do Jubileu"
+              description="Uma oração de entrega, fé e esperança para este tempo especial da comunidade."
             />
-            <Reveal delay={0.1} className="mt-8 space-y-3">
-              {["1º trimestre", "2º trimestre", "3º trimestre", "4º trimestre"].map((label) => (
-                <div
-                  key={label}
-                  className="flex items-center justify-between rounded-2xl border border-dashed border-border bg-background p-5"
-                >
-                  <span className="flex items-center gap-3 text-sm font-medium">
-                    <FileBarChart className="size-4.5 text-primary" aria-hidden />
-                    Relatório — {label}
-                  </span>
-                  <span className="text-xs text-muted-foreground">Em breve</span>
-                </div>
-              ))}
+            <Reveal delay={0.1} className="mt-8">
+              <div className="rounded-3xl border border-border bg-background p-7 shadow-[var(--shadow-soft)]">
+                <p className="whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
+                  Senhor Jesus, Pastor eterno, neste Jubileu colocamo-nos aos teus pés com o coração agradecido pelos 24 anos da Paróquia Nossa Senhora Aparecida; Tu foste nossa luz nas noites, força nas lutas e esperança nas travessias.
+
+Recordamos Contigo cada gesto de evangelização, cada pastoral, cada comunidade que, entre lágrimas e sorrisos, fez florescer o teu Reino.
+
+Maria Santíssima, Mãe Aparecida, envolve-nos com teu manto e ensina-nos a guardar no íntimo a tua palavra: “Faça o que Ele vos disser”.
+
+Jesus te pedimos, se esfriarmos, reacende-nos; se cansarmos, renova-nos; se vacilarmos, sustenta-nos.
+
+Derrama sobre nós um novo Pentecostes e faze de nossas sete comunidades discípulas ardentes e missionárias corajosas.
+
+E agora, Senhor, humildemente suplicamos: dai-nos a tua bênção e faze deste Ano Jubilar um tempo de graça, fidelidade e profundo amor a Ti.
+
+Amém.
+                </p>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -123,8 +128,32 @@ function Ave12() {
       <section className="section-y">
         <div className="container-page">
           <SectionTitle
+            eyebrow="Transparência"
+            title="Prestação de contas"
+            description="Cada real recebido é registrado e publicado. Esta área receberá os relatórios periódicos aprovados pelo conselho econômico."
+          />
+          <Reveal delay={0.1} className="mt-8 space-y-3">
+            {["1º trimestre", "2º trimestre", "3º trimestre", "4º trimestre"].map((label) => (
+              <div
+                key={label}
+                className="flex items-center justify-between rounded-2xl border border-dashed border-border bg-background p-5"
+              >
+                <span className="flex items-center gap-3 text-sm font-medium">
+                  <FileBarChart className="size-4.5 text-primary" aria-hidden />
+                  Relatório — {label}
+                </span>
+                <span className="text-xs text-muted-foreground">Em breve</span>
+              </div>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-y">
+        <div className="container-page">
+          <SectionTitle
             eyebrow="Multimídia"
-            title="Vídeos e imagens da campanha"
+            title="Vídeos e imagens do Jubileu de Prata"
             description="Espaço preparado para os vídeos institucionais e o material gráfico produzido pela PASCOM."
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

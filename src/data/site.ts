@@ -10,7 +10,7 @@ export const parish = {
   city: "Maringá — PR",
   archdiocese: "Arquidiocese de Maringá",
   patron: "Nossa Senhora Aparecida",
-  address: "Paróquia Nossa Senhora Aparecida — Maringá, Paraná",
+  address: "Praça Nossa Senhora Aparecida, Vila Esperança, Maringá — PR",
   email: "secretaria@paroquiaaparecidamga.com.br",
   phone: "(44) 3267-0484",
   whatsapp: "https://wa.me/5544984230760",
@@ -18,9 +18,9 @@ export const parish = {
   instagram: "https://instagram.com/pnsa_mga",
   facebook: "https://facebook.com/pnsa.maringa",
   youtube: "https://youtube.com/",
-  maps: "https://www.google.com/maps/search/?api=1&query=Paróquia+Nossa+Senhora+Aparecida+Maringá",
+  maps: "https://www.google.com/maps/search/?api=1&query=Paróquia+Nossa+Senhora+Aparecida+Praça+Nossa+Senhora+Aparecida+Vila+Esperança+Maringá",
   mapsEmbed:
-    "https://www.google.com/maps?q=Par%C3%B3quia%20Nossa%20Senhora%20Aparecida%20Maring%C3%A1&output=embed",
+    "https://www.google.com/maps?q=Par%C3%B3quia%20Nossa%20Senhora%20Aparecida%20Pra%C3%A7a%20Nossa%20Senhora%20Aparecida%20Vila%20Esperan%C3%A7a%20Maring%C3%A1&output=embed",
   calendarUrl: "https://agendamento.p7group.cloud/calendario?paroquia_id=1&mes=2026-07",
   shopUrl: "https://www.nuvemshop.com.br/",
   ticketsUrl: "https://nomineingressos.com/pnsa_mga/",
@@ -32,7 +32,7 @@ export const nav = [
   { label: "História", to: "/historia" },
   { label: "Notícias", to: "/noticias" },
   { label: "Agenda", to: parish.calendarUrl },
-  { label: "AVE12", to: "/ave12" },
+  { label: "Jubileu de Prata", to: "/ave12" },
   { label: "Camisetas", to: "/camisetas" },
   { label: "Show de Prêmios", to: "/show-de-premios" },
   { label: "Premiações", to: "/premiacoes" },
@@ -68,13 +68,13 @@ export interface NewsPost {
 
 export const news: NewsPost[] = [
   {
-    slug: "campanha-ave12-mobiliza-comunidade",
-    title: "Campanha AVE12 mobiliza a comunidade paroquial",
+    slug: "jubileu-de-prata-mobiliza-comunidade",
+    title: "Jubileu de Prata mobiliza a comunidade paroquial",
     excerpt:
-      "A campanha reúne fiéis em torno de um compromisso mensal de contribuição e corresponsabilidade com a vida da paróquia.",
+      "O Jubileu de Prata reúne fiéis em torno de um compromisso de contribuição e corresponsabilidade com a vida da paróquia.",
     body: [
-      "A campanha AVE12 nasceu do desejo de tornar a manutenção e a missão da Paróquia Nossa Senhora Aparecida uma tarefa de toda a comunidade. A proposta é simples: cada família assume uma contribuição ao longo dos doze meses do ano, garantindo previsibilidade para as obras, para a pastoral e para as ações sociais.",
-      "Nas últimas semanas, coordenadores de pastorais e movimentos apresentaram a campanha nas missas e nos encontros de catequese. O retorno tem sido expressivo: novas famílias aderiram e antigos colaboradores renovaram o compromisso.",
+      "O Jubileu de Prata nasceu do desejo de tornar a manutenção e a missão da Paróquia Nossa Senhora Aparecida uma tarefa de toda a comunidade. A proposta é simples: cada família assume uma contribuição ao longo dos doze meses do ano, garantindo previsibilidade para as obras, para a pastoral e para as ações sociais.",
+      "Nas últimas semanas, coordenadores de pastorais e movimentos apresentaram o projeto nas missas e nos encontros de catequese. O retorno tem sido expressivo: novas famílias aderiram e antigos colaboradores renovaram o compromisso.",
       "Toda a prestação de contas será publicada neste portal, com relatórios periódicos sobre a destinação dos recursos.",
     ],
     category: "Paróquia",
@@ -147,7 +147,7 @@ export const news: NewsPost[] = [
       "Notícias, agenda, galeria e informações institucionais reunidas em um só lugar, com atualização feita pela própria comunidade.",
     body: [
       "O novo portal concentra os canais de comunicação da paróquia e passa a ser a referência oficial para avisos, agenda litúrgica e campanhas.",
-      "A equipe da PASCOM será responsável pela atualização dos conteúdos por meio de um painel administrativo protegido.",
+      "A equipe da PASCOM será responsável pela atualização dos conteúdos por meio do portal oficial da paróquia.",
     ],
     category: "PASCOM",
     author: "PASCOM Aparecida",
@@ -239,10 +239,10 @@ export const schedules = [
   {
     title: "Secretaria Paroquial",
     items: [
-      "Terça a sexta — 08h30 às 11h30",
-      "Terça a sexta — 13h30 às 17h30",
-      "Sábado — 08h30 às 11h30",
-      "Domingo e segunda — fechada",
+      "Segunda a sexta — 08h00 às 11h30",
+      "Segunda a sexta — 13h30 às 18h00",
+      "Sábado — 08h00 às 12h00",
+      "Domingo — fechada",
     ],
   },
   {

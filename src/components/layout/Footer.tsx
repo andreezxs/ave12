@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Church, Instagram, Facebook, Youtube, MessageCircle, Mail } from "lucide-react";
+import { Church, Instagram, Facebook, Youtube, MessageCircle, Mail, Radio } from "lucide-react";
 import { nav, parish } from "@/data/site";
 
 export function Footer() {
@@ -19,6 +19,7 @@ export function Footer() {
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {[
+              { href: "https://colmeiafm.com.br/", icon: Radio, label: "Rádio Colmeia" },
               { href: parish.instagram, icon: Instagram, label: "Instagram" },
               { href: parish.facebook, icon: Facebook, label: "Facebook" },
               { href: parish.youtube, icon: Youtube, label: "YouTube" },

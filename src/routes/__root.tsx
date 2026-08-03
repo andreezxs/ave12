@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { parish } from "@/data/site";
 
 function NotFoundComponent() {
   return (
@@ -84,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Portal oficial da Paróquia Nossa Senhora Aparecida: notícias, agenda, horários de missas, galeria e campanha AVE12.",
+          "Portal oficial da Paróquia Nossa Senhora Aparecida: notícias, agenda, horários de missas, galeria e Jubileu de Prata.",
       },
       { name: "author", content: "PASCOM Paróquia Nossa Senhora Aparecida" },
       { property: "og:site_name", content: "Paróquia Nossa Senhora Aparecida" },
@@ -107,8 +108,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Church",
-          name: "Paróquia Nossa Senhora Aparecida",
-          address: { "@type": "PostalAddress", addressLocality: "Maringá", addressRegion: "PR" },
+          name: parish.name,
+          url: "https://linkbio-pnsa-mga.vercel.app",
+          telephone: parish.phone,
+          email: parish.email,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Praça Nossa Senhora Aparecida, Vila Esperança",
+            addressLocality: "Maringá",
+            addressRegion: "PR",
+            addressCountry: "BR",
+          },
+          sameAs: [parish.instagram, parish.facebook],
         }),
       },
     ],

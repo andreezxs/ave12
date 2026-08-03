@@ -17,7 +17,7 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Dúvidas sobre batizados, casamentos, catequese, campanha AVE12, cartelas e camisetas da paróquia.",
+          "Dúvidas sobre batizados, casamentos, catequese, Jubileu de Prata, cartelas e camisetas da paróquia.",
       },
       { property: "og:title", content: "Perguntas Frequentes" },
       { property: "og:description", content: "As respostas para as dúvidas mais comuns." },
