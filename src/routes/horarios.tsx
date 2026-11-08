@@ -2,9 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Clock, Facebook, Instagram, MapPin, MessageCircle, Phone } from "lucide-react";
 import { PageHero } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
-import { parish, schedules } from "@/data/site";
+import { parish } from "@/data/site";
+import { fetchSchedules } from "@/lib/content";
 
 export const Route = createFileRoute("/horarios")({
+  loader: async () => ({ schedules: await fetchSchedules() }),
   component: Horarios,
   head: () => ({
     meta: [
@@ -23,6 +25,9 @@ export const Route = createFileRoute("/horarios")({
 });
 
 function Horarios() {
+  const { schedules } = Route.useLoaderData() as {
+    schedules: Array<{ title: string; items: string[] }>;
+  };
   return (
     <>
       <PageHero

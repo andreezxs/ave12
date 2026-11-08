@@ -7,11 +7,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faq } from "@/data/site";
+import { fetchFaq } from "@/lib/content";
 
 export const Route = createFileRoute("/faq")({
+  loader: async () => ({ faq: await fetchFaq() }),
   component: Faq,
-  head: () => ({
+  head: ({ loaderData }) => ({
     meta: [
       { title: "Perguntas Frequentes — Paróquia Nossa Senhora Aparecida" },
       {
@@ -30,7 +31,7 @@ export const Route = createFileRoute("/faq")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: faq.map((f) => ({
+          mainEntity: (loaderData?.faq ?? []).map((f: { q: string; a: string }) => ({
             "@type": "Question",
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -42,6 +43,7 @@ export const Route = createFileRoute("/faq")({
 });
 
 function Faq() {
+  const { faq } = Route.useLoaderData() as { faq: Array<{ q: string; a: string }> };
   return (
     <>
       <PageHero

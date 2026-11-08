@@ -3,7 +3,7 @@ import { useState } from "react";
 import { PageHero } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { formatDate, type NewsPost } from "@/data/site";
-import { fetchNews } from "@/lib/news";
+import { fetchNews } from "@/lib/content";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
 import comunidadeImg from "@/assets/comunidade.jpg";

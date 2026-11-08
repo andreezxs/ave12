@@ -3,9 +3,11 @@ import { Trophy, Ticket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
-import { parish, prizes } from "@/data/site";
+import { parish } from "@/data/site";
+import { fetchPrizes } from "@/lib/content";
 
 export const Route = createFileRoute("/premiacoes")({
+  loader: async () => ({ prizes: await fetchPrizes() }),
   component: Premiacoes,
   head: () => ({
     meta: [
@@ -24,6 +26,9 @@ export const Route = createFileRoute("/premiacoes")({
 });
 
 function Premiacoes() {
+  const { prizes } = Route.useLoaderData() as {
+    prizes: Array<{ title: string; description: string; highlight?: boolean }>;
+  };
   return (
     <>
       <PageHero

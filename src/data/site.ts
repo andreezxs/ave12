@@ -1,7 +1,5 @@
 /**
  * Fonte única de conteúdo do portal.
- * Estrutura preparada para futura substituição por CMS headless / painel admin:
- * cada bloco abaixo espelha um "content type".
  */
 
 export const parish = {

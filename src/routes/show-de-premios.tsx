@@ -9,9 +9,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { parish, prizes } from "@/data/site";
+import { parish } from "@/data/site";
+import { fetchPrizes } from "@/lib/content";
 
 export const Route = createFileRoute("/show-de-premios")({
+  loader: async () => ({ prizes: await fetchPrizes() }),
   component: ShowDePremios,
   head: () => ({
     meta: [
@@ -61,6 +63,9 @@ const faqs = [
 ];
 
 function ShowDePremios() {
+  const { prizes } = Route.useLoaderData() as {
+    prizes: Array<{ title: string; description: string; highlight?: boolean }>;
+  };
   return (
     <>
       <PageHero

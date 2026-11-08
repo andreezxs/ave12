@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { fetchNews, fetchNewsBySlug } from "@/lib/news";
+import { fetchNews, fetchNewsBySlug } from "@/lib/content";
 import { formatDate, type NewsPost } from "@/data/site";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
@@ -11,7 +11,7 @@ const covers = { igreja: heroImg, interior: interiorImg, comunidade: comunidadeI
 
 export const Route = createFileRoute("/noticias/$slug")({
   loader: async ({ params }) => {
-    const post = await fetchNewsBySlug(params.slug);
+    const post = await fetchNewsBySlug({ data: params.slug });
     if (!post) throw notFound();
     const related = (await fetchNews()).filter((n) => n.slug !== params.slug).slice(0, 3);
     return { post, related };

@@ -39,7 +39,7 @@ export function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <header className="relative overflow-hidden border-b border-border bg-[linear-gradient(135deg,oklch(0.98_0.01_245),oklch(1_0_0))] pt-32 pb-16 md:pt-40 md:pb-24">
+    <header className="relative overflow-hidden border-b border-border bg-[linear-gradient(135deg,#e7f6fb,#ffffff)] pt-32 pb-16 md:pt-40 md:pb-24">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 h-96 w-[52rem] -translate-x-1/2 rounded-full opacity-20 blur-3xl bg-gradient-brand"

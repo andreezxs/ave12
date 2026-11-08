@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
-import { timeline } from "@/data/site";
+import { fetchTimeline } from "@/lib/content";
 import heroImg from "@/assets/hero-igreja.jpeg";
 
 export const Route = createFileRoute("/historia")({
+  loader: async () => ({ timeline: await fetchTimeline() }),
   component: Historia,
   head: () => ({
     meta: [
@@ -27,6 +28,9 @@ export const Route = createFileRoute("/historia")({
 });
 
 function Historia() {
+  const { timeline } = Route.useLoaderData() as {
+    timeline: Array<{ year: string; title: string; text: string }>;
+  };
   return (
     <>
       <PageHero
