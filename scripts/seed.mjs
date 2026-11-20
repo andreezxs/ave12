@@ -294,8 +294,10 @@ async function main() {
     category TEXT NOT NULL,
     author TEXT NOT NULL,
     date DATE NOT NULL,
-    cover TEXT NOT NULL
+    cover TEXT NOT NULL,
+    cover_url TEXT
   )`;
+  await sql`ALTER TABLE news ADD COLUMN IF NOT EXISTS cover_url TEXT`;
 
   await sql`CREATE TABLE IF NOT EXISTS agenda (
     id SERIAL PRIMARY KEY,

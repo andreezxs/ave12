@@ -22,7 +22,7 @@ async function queryNews(): Promise<NewsPost[]> {
   try {
     const sql = await getSql();
     const rows = await sql`
-      SELECT slug, title, excerpt, body, category, author, date::text AS date, cover
+      SELECT slug, title, excerpt, body, category, author, date::text AS date, cover, cover_url
       FROM news
       ORDER BY date DESC
     `;
@@ -35,6 +35,7 @@ async function queryNews(): Promise<NewsPost[]> {
       author: String(row.author),
       date: String(row.date).slice(0, 10),
       cover: row.cover as NewsPost["cover"],
+      coverUrl: row.cover_url ? String(row.cover_url) : undefined,
     }));
   } catch (error) {
     console.warn("Neon news fallback:", error instanceof Error ? error.message : error);
@@ -50,7 +51,7 @@ export const fetchNewsBySlug = createServerFn({ method: "GET" })
     try {
       const sql = await getSql();
       const rows = await sql`
-        SELECT slug, title, excerpt, body, category, author, date::text AS date, cover
+        SELECT slug, title, excerpt, body, category, author, date::text AS date, cover, cover_url
         FROM news
         WHERE slug = ${slug}
         LIMIT 1
@@ -66,6 +67,7 @@ export const fetchNewsBySlug = createServerFn({ method: "GET" })
         author: String(row.author),
         date: String(row.date).slice(0, 10),
         cover: row.cover as NewsPost["cover"],
+        coverUrl: row.cover_url ? String(row.cover_url) : undefined,
       } satisfies NewsPost;
     } catch (error) {
       console.warn("Neon news by slug fallback:", error instanceof Error ? error.message : error);

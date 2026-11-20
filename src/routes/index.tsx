@@ -16,6 +16,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { SectionTitle } from "@/components/site/Section";
 import { parish, formatDate, type NewsPost } from "@/data/site";
 import { fetchNews, fetchSchedules } from "@/lib/content";
+import { getNewsImage } from "@/lib/news-image";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
 import comunidadeImg from "@/assets/comunidade.jpg";
@@ -44,8 +45,6 @@ export const Route = createFileRoute("/")({
     links: [{ rel: "canonical", href: "/" }],
   }),
 });
-
-const covers = { igreja: heroImg, interior: interiorImg, comunidade: comunidadeImg };
 
 const quickCards = [
   { icon: Clock, title: "Missas", text: "Sex 7h · Sáb 19h30 · Dom 8h, 18h", to: "/horarios" },
@@ -240,7 +239,7 @@ function Home() {
                 >
                   <div className="aspect-[16/10] overflow-hidden">
                     <img
-                      src={covers[post.cover]}
+                      src={getNewsImage(post)}
                       alt={post.title}
                       loading="lazy"
                       width={1600}

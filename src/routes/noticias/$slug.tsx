@@ -3,17 +3,17 @@ import { ArrowLeft, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { fetchNews, fetchNewsBySlug } from "@/lib/content";
 import { formatDate, type NewsPost } from "@/data/site";
-import heroImg from "@/assets/hero-igreja.jpeg";
-import interiorImg from "@/assets/interior-igreja.jpeg";
-import comunidadeImg from "@/assets/comunidade.jpg";
-
-const covers = { igreja: heroImg, interior: interiorImg, comunidade: comunidadeImg };
+import { getNewsImage } from "@/lib/news-image";
 
 export const Route = createFileRoute("/noticias/$slug")({
   loader: async ({ params }) => {
     const post = await fetchNewsBySlug({ data: params.slug });
     if (!post) throw notFound();
-    const related = (await fetchNews()).filter((n) => n.slug !== params.slug).slice(0, 3);
+    const candidates = (await fetchNews()).filter((item) => item.slug !== params.slug);
+    const related = [
+      ...candidates.filter((item) => item.category === post.category),
+      ...candidates.filter((item) => item.category !== post.category),
+    ].slice(0, 3);
     return { post, related };
   },
   component: Post,
@@ -76,7 +76,7 @@ function Post() {
         </p>
 
         <img
-          src={covers[post.cover]}
+          src={getNewsImage(post)}
           alt={post.title}
           width={1600}
           height={1000}
@@ -106,6 +106,12 @@ function Post() {
               params={{ slug: item.slug }}
               className="surface-card block h-full p-6"
             >
+              <img
+                src={getNewsImage(item)}
+                alt=""
+                loading="lazy"
+                className="mb-4 aspect-video w-full rounded-2xl object-cover"
+              />
               <span className="text-xs font-medium text-primary uppercase">{item.category}</span>
               <h3 className="mt-2 text-base leading-snug font-semibold">{item.title}</h3>
               <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{item.excerpt}</p>

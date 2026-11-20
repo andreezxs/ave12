@@ -4,9 +4,7 @@ import { PageHero } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { formatDate, type NewsPost } from "@/data/site";
 import { fetchNews } from "@/lib/content";
-import heroImg from "@/assets/hero-igreja.jpeg";
-import interiorImg from "@/assets/interior-igreja.jpeg";
-import comunidadeImg from "@/assets/comunidade.jpg";
+import { getNewsImage } from "@/lib/news-image";
 
 export const Route = createFileRoute("/noticias/")({
   loader: async () => ({ news: await fetchNews() }),
@@ -27,21 +25,11 @@ export const Route = createFileRoute("/noticias/")({
   }),
 });
 
-const covers = { igreja: heroImg, interior: interiorImg, comunidade: comunidadeImg };
-const categories = [
-  "Paróquia",
-  "Arquidiocese",
-  "Catequese",
-  "Juventude",
-  "PASCOM",
-  "Comunicados",
-  "Geral",
-];
-
 function Noticias() {
   const { news } = Route.useLoaderData() as { news: NewsPost[] };
-  const [active, setActive] = useState("Paróquia");
-  const list = news.filter((n) => n.category === active);
+  const [active, setActive] = useState("Todas");
+  const categories = ["Todas", ...new Set(news.map((post) => post.category))];
+  const list = active === "Todas" ? news : news.filter((post) => post.category === active);
 
   return (
     <>
@@ -81,7 +69,7 @@ function Noticias() {
                 >
                   <div className="aspect-[16/10] overflow-hidden">
                     <img
-                      src={covers[post.cover]}
+                      src={getNewsImage(post)}
                       alt={post.title}
                       loading="lazy"
                       width={1600}
