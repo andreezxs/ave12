@@ -64,7 +64,11 @@ function Camisetas() {
             <p className="mt-8 text-4xl font-semibold text-gradient">R$ 35,00</p>
 
             <Button asChild size="lg" className="mt-10 w-full rounded-full sm:w-auto">
-              <a href={parish.whatsapp} target="_blank" rel="noopener noreferrer">
+              <a
+                href={`${parish.whatsapp}?text=${encodeURIComponent("Quero comprar a camiseta do jubileu")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <MessageCircle className="size-4" aria-hidden /> Comprar camiseta
               </a>
             </Button>
