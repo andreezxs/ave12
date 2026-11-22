@@ -180,7 +180,7 @@ function Paroquia() {
             {clergy.map((c, i) => (
               <Reveal key={c.id} delay={i * 0.06}>
                 <article className="surface-card h-full overflow-hidden">
-                  <div className="aspect-[4/5] w-full bg-muted">
+                  <div className="h-80 w-full bg-muted md:h-96">
                     <img
                       src={c.image}
                       alt={`${c.role} ${c.name}`}
