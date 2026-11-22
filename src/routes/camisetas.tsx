@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ShoppingBag, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PageHero, SectionTitle } from "@/components/site/Section";
+import { PageHero } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { parish } from "@/data/site";
 import camisetaImg from "@/assets/camiseta.svg";
@@ -105,13 +105,8 @@ function Camisetas() {
 
       <section className="section-y bg-surface">
         <div className="container-page">
-          <SectionTitle
-            eyebrow="Guia"
-            title="Tabela de tamanhos"
-            description="Medidas aproximadas da peça deitada. Em caso de dúvida, escolha o tamanho maior."
-          />
           <Reveal delay={0.1}>
-            <div className="mt-10 overflow-x-auto rounded-3xl border border-border bg-background">
+            <div className="overflow-x-auto rounded-3xl border border-border bg-background">
               <table className="w-full text-left text-sm">
                 <caption className="sr-only">Tabela de tamanhos da camiseta oficial</caption>
                 <thead className="bg-muted text-xs uppercase">
