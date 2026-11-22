@@ -74,7 +74,7 @@ function Noticias() {
                       loading="lazy"
                       width={1600}
                       height={1000}
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="size-full object-contain"
                     />
                   </div>
                   <div className="p-6">

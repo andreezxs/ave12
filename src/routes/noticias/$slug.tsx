@@ -110,7 +110,7 @@ function Post() {
                 src={getNewsImage(item)}
                 alt=""
                 loading="lazy"
-                className="mb-4 aspect-video w-full rounded-2xl object-cover"
+                className="mb-4 aspect-video w-full rounded-2xl object-contain"
               />
               <span className="text-xs font-medium text-primary uppercase">{item.category}</span>
               <h3 className="mt-2 text-base leading-snug font-semibold">{item.title}</h3>
