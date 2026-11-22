@@ -60,6 +60,8 @@ As notícias são lidas da tabela `news`. Para cada notícia, `category` define 
 
 Antes de usar `cover_url` em um banco existente, execute uma vez o SQL em `database/migrations/001-news-cover-url.sql` no Neon SQL Editor. Para adicionar uma notícia, use o Neon SQL Editor:
 
+Para atualizar os horários de batizados em um banco existente, execute `database/migrations/002-baptism-schedule.sql` no Neon SQL Editor.
+
 ```sql
 INSERT INTO news (slug, title, excerpt, body, category, author, date, cover, cover_url)
 VALUES (

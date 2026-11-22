@@ -220,11 +220,15 @@ const schedules = [
     items: ["Quarta-feira — 14h00 às 16h00", "Sexta — 08h30 às 11h00", "Sábado — 08h30 às 11h00"],
   },
   {
-    title: "Batizados e Casamentos",
+    title: "Horários de Batizados",
     items: [
-      "Batizados — 2º domingo do mês, 09h00",
-      "Encontro de pais e padrinhos — sábado anterior, 16h00",
-      "Casamentos — mediante agendamento na Secretaria Paroquial",
+      "Capela 8h da manhã - R$ 200,00",
+      "1° 3° e 5° Domingo - Diac. Sérgio",
+      "2° e 4° Domingo - Diac. Leocir",
+      "Matriz - 8h da manhã",
+      "2° e 4° Domingo - Diac. Sérgio",
+      "3° e 5° Domingo - Diac. Leocir",
+      "Para agendar seu casamento - mediante agendamento na Secretaria paroquial",
     ],
   },
 ];
