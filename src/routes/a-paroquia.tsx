@@ -52,21 +52,21 @@ const clergy = [
     role: "Pároco",
     name: "Pe. Valter Antônio Brandão",
     note: "Nascimento: 26/02/1969 - Ordenação: 14/01/1996",
-    image: "/pe.%20valter.jpg",
+    image: "/PE%20VALTER.jpg",
   },
   {
     id: "diacono-sergio",
     role: "Diácono",
     name: "Sérgio Luiz Rodrigues",
     note: "Nascimento: 26/07/1965 - Ordenação: 02/10/2015",
-    image: "/diac.%20s%C3%A9rgio.png",
+    image: "/DIAC%20SERGIO.jpg",
   },
   {
     id: "diacono-leocir",
     role: "Diácono",
     name: "Leocir da Silva",
     note: "Nascimento: 08/04/1962 - Ordenação: 18/08/2024",
-    image: "/diac.%20leocir.jpg",
+    image: "/DIAC%20LEOCIR.jpg",
   },
 ];
 
