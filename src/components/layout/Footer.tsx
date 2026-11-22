@@ -81,8 +81,8 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="container-page flex flex-col gap-2 py-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>
-            © {new Date().getFullYear()} {parish.name} — {parish.archdiocese}. Todos os direitos
-            reservados.
+            CNPJ 799.154.076/0050-00 — Paróquia Nossa Senhora Aparecida, Vila esperança,
+            Maringá — Arquidiocese de Maringá
           </p>
         </div>
       </div>
