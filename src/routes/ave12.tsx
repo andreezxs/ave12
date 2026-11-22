@@ -55,13 +55,12 @@ function Ave12() {
         description="Doze meses. Uma comunidade. Um compromisso comum com a missão da Paróquia Nossa Senhora Aparecida."
       >
         <div className="flex flex-wrap gap-3">
-          <Button asChild size="lg" className="rounded-full">
-            <a href={parish.whatsapp} target="_blank" rel="noopener noreferrer">
-              Quero participar
-            </a>
-          </Button>
           <Button asChild size="lg" variant="outline" className="rounded-full">
-            <a href={parish.shopUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              href={`${parish.whatsapp}?text=${encodeURIComponent("Quero comprar a camiseta do jubileu")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Comprar camiseta do Jubileu de Prata
             </a>
           </Button>
