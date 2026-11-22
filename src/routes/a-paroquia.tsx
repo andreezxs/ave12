@@ -185,7 +185,7 @@ function Paroquia() {
                       src={c.image}
                       alt={`${c.role} ${c.name}`}
                       loading="lazy"
-                      className="size-full object-contain"
+                      className="size-full object-cover object-center"
                     />
                   </div>
                   <div className="p-7">
