@@ -291,7 +291,7 @@ export const faq = [
   },
   {
     q: "Como compro a camiseta oficial?",
-    a: "A venda é feita pela loja oficial. Consulte a tabela de tamanhos na página Camisetas antes de finalizar o pedido.",
+    a: "A venda é feita pelo WhatsApp oficial da secretaria da Paróquia Nossa Senhora Aparecida.",
   },
   {
     q: "Quero servir em uma pastoral. Por onde começo?",
