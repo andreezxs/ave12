@@ -49,7 +49,7 @@ const channels = [
   {
     icon: MessageCircle,
     label: "WhatsApp da secretaria",
-    value: `${parish.phone} · Atendimento de segunda a sexta`,
+    value: "(44) 99071-683 · Atendimento de segunda a sexta",
     href: parish.whatsapp,
   },
   {

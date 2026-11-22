@@ -11,7 +11,7 @@ export const parish = {
   address: "Praça Nossa Senhora Aparecida, Vila Esperança, Maringá — PR",
   email: "secretaria@paroquiaaparecidamga.com.br",
   phone: "(44) 3267-0484",
-  whatsapp: "https://wa.me/5544984230760",
+  whatsapp: "https://wa.me/554499071683",
   whatsappChannel: "https://whatsapp.com/channel/0029Vb7VUmt4IBhKnOpEi73S",
   instagram: "https://instagram.com/pnsa_mga",
   facebook: "https://facebook.com/pnsa.maringa",

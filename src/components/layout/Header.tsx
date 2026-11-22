@@ -39,8 +39,13 @@ export function Header() {
         }`}
       >
         <Link to="/" className="flex items-center gap-2.5" aria-label="Início">
-          <span className="flex size-9 items-center justify-center rounded-2xl bg-gradient-brand text-primary-foreground">
-            <img src="/pnsa-icon.ico" alt="Ícone da paróquia" className="size-4.5" />
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-white p-1 shadow-sm">
+            <img
+              src="/pnsa-icon.ico"
+              alt="Ícone da paróquia"
+              className="size-full object-contain"
+              aria-hidden
+            />
           </span>
           <span className="hidden leading-tight sm:block">
             <span className="block text-sm font-semibold">Paróquia N. Sra. Aparecida</span>
