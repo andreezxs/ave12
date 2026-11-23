@@ -80,7 +80,7 @@ function Post() {
           alt={post.title}
           width={1600}
           height={1000}
-          className="mt-10 w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+          className="mt-10 block h-auto w-full rounded-3xl shadow-[var(--shadow-lift)]"
         />
 
         <div className="mt-10 space-y-5 text-lg leading-relaxed text-muted-foreground">
@@ -110,7 +110,7 @@ function Post() {
                 src={getNewsImage(item)}
                 alt=""
                 loading="lazy"
-                className="mb-4 aspect-video w-full rounded-2xl object-contain"
+                className="mb-4 block h-auto w-full rounded-2xl"
               />
               <span className="text-xs font-medium text-primary uppercase">{item.category}</span>
               <h3 className="mt-2 text-base leading-snug font-semibold">{item.title}</h3>

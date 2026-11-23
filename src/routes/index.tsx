@@ -237,16 +237,14 @@ function Home() {
                   params={{ slug: post.slug }}
                   className="surface-card group block h-full overflow-hidden"
                 >
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img
-                      src={getNewsImage(post)}
-                      alt={post.title}
-                      loading="lazy"
-                      width={1600}
-                      height={1000}
-                      className="size-full object-contain"
-                    />
-                  </div>
+                  <img
+                    src={getNewsImage(post)}
+                    alt={post.title}
+                    loading="lazy"
+                    width={1600}
+                    height={1000}
+                    className="block h-auto w-full"
+                  />
                   <div className="p-6">
                     <span className="text-xs font-medium text-primary uppercase">
                       {post.category}
