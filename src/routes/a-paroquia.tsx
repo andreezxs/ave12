@@ -5,6 +5,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { parish } from "@/data/site";
 import interiorImg from "@/assets/interior-igreja.jpeg";
 import CebImg from "@/assets/comunidade.jpg";
+import peValterImg from "@/assets/PE VALTER IMG.jpg";
 
 export const Route = createFileRoute("/a-paroquia")({
   component: Paroquia,
@@ -52,7 +53,7 @@ const clergy = [
     role: "Pároco",
     name: "Pe. Valter Antônio Brandão",
     note: "Nascimento: 26/02/1969 - Ordenação: 14/01/1996",
-    image: "/PE%20VALTER.jpg",
+    image: peValterImg,
   },
   {
     id: "diacono-sergio",
