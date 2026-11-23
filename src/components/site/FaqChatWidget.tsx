@@ -1,12 +1,25 @@
 import { useState } from "react";
 import { ArrowLeft, ChevronRight, Info, MessageCircle, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
-import { faq, parish } from "@/data/site";
+import { parish } from "@/data/site";
+import { fetchFaq, type FaqItem } from "@/lib/content";
 
 export function FaqChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedQuestion, setSelectedQuestion] = useState<(typeof faq)[number] | null>(null);
+  const [selectedQuestion, setSelectedQuestion] = useState<FaqItem | null>(null);
+  const {
+    data: faqItems,
+    isPending,
+    isError,
+    refetch,
+  } = useQuery({
+    queryKey: ["faq"],
+    queryFn: () => fetchFaq(),
+    enabled: isOpen,
+    staleTime: 5 * 60 * 1000,
+  });
 
   return (
     <>
@@ -36,12 +49,23 @@ export function FaqChatWidget() {
             </Button>
           </header>
 
-          <div className="flex-1 space-y-3 overflow-y-auto p-4">
+          <div className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain p-4">
             <p className="max-w-[90%] rounded-2xl rounded-tl-sm bg-muted p-3 text-sm leading-relaxed">
               Olá! Posso ajudar com algumas dúvidas frequentes. O que você gostaria de saber?
             </p>
 
-            {selectedQuestion ? (
+            {isPending ? (
+              <p role="status" className="text-sm text-muted-foreground">
+                Carregando perguntas...
+              </p>
+            ) : isError ? (
+              <div role="alert" className="space-y-3 text-sm">
+                <p>Não foi possível carregar as perguntas frequentes.</p>
+                <Button type="button" variant="outline" size="sm" onClick={() => void refetch()}>
+                  Tentar novamente
+                </Button>
+              </div>
+            ) : selectedQuestion ? (
               <>
                 <p className="ml-auto max-w-[90%] rounded-2xl rounded-tr-sm bg-primary p-3 text-sm leading-relaxed text-primary-foreground">
                   {selectedQuestion.q}
@@ -60,9 +84,9 @@ export function FaqChatWidget() {
                   Escolher outra pergunta
                 </Button>
               </>
-            ) : (
-              <div className="space-y-2">
-                {faq.map((item) => (
+            ) : faqItems?.length ? (
+              <div className="max-h-64 space-y-2 overflow-y-auto pr-1">
+                {faqItems.map((item) => (
                   <button
                     key={item.q}
                     type="button"
@@ -74,6 +98,10 @@ export function FaqChatWidget() {
                   </button>
                 ))}
               </div>
+            ) : (
+              <p className="text-sm text-muted-foreground">
+                Não há perguntas frequentes disponíveis no momento.
+              </p>
             )}
           </div>
 
