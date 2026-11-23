@@ -1,8 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
+  BookOpen,
   CalendarDays,
+  ChevronDown,
   Clock,
+  ExternalLink,
   Instagram,
   MapPin,
   MessageCircle,
@@ -10,12 +13,14 @@ import {
   Phone,
   Quote,
   Radio,
+  RefreshCw,
 } from "lucide-react";
+import { type ReactNode, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionTitle } from "@/components/site/Section";
 import { parish, formatDate, type NewsPost } from "@/data/site";
-import { fetchNews, fetchSchedules } from "@/lib/content";
+import { fetchNews, fetchSaintOfDay, fetchSchedules, type SaintOfDayInfo } from "@/lib/content";
 import { getNewsImage } from "@/lib/news-image";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
@@ -80,6 +85,373 @@ const quickCards = [
     href: parish.instagram,
   },
 ];
+
+type LiturgyReading = {
+  reference?: string;
+  title?: string;
+  text?: string;
+  refrain?: string;
+};
+
+type LiturgyText = { label: string; text: string };
+
+type DailyLiturgy = {
+  date: string;
+  celebration: string;
+  liturgicalSeason: string;
+  liturgicalColor: string;
+  readings: Array<{ label: string; entries: LiturgyReading[] }>;
+  prayers: LiturgyText[];
+  antiphons: LiturgyText[];
+};
+
+type DailyLiturgyState =
+  { status: "loading" } | { status: "loaded"; liturgy: DailyLiturgy } | { status: "error" };
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null;
+}
+
+function getReadings(value: unknown): LiturgyReading[] {
+  if (!Array.isArray(value)) return [];
+
+  return value.flatMap((reading) => {
+    if (!isRecord(reading)) return [];
+    const entry: LiturgyReading = {
+      reference: typeof reading.referencia === "string" ? reading.referencia : undefined,
+      title: typeof reading.titulo === "string" ? reading.titulo : undefined,
+      text: typeof reading.texto === "string" ? reading.texto : undefined,
+      refrain: typeof reading.refrao === "string" ? reading.refrao : undefined,
+    };
+    return Object.values(entry).some(Boolean) ? [entry] : [];
+  });
+}
+
+function getLiturgyTexts(
+  value: unknown,
+  fields: Array<{ key: string; label: string }>,
+): LiturgyText[] {
+  if (!isRecord(value)) return [];
+
+  return fields.flatMap(({ key, label }) => {
+    const text = value[key];
+    return typeof text === "string" && text.trim() ? [{ label, text }] : [];
+  });
+}
+
+function getLiturgicalSeason(celebration: string): string {
+  if (/tempo comum/i.test(celebration)) return "Tempo Comum";
+  if (/advento/i.test(celebration)) return "Tempo do Advento";
+  if (/natal/i.test(celebration)) return "Tempo do Natal";
+  if (/quaresma/i.test(celebration)) return "Tempo da Quaresma";
+  if (/páscoa|pascal/i.test(celebration)) return "Tempo Pascal";
+  return "Tempo litúrgico conforme a celebração";
+}
+
+function renderVerseText(text: string): ReactNode[] {
+  const verseMarkers = /(^|[\s.!?;:])(\d{1,3}(?:[a-z](?=[A-ZÀ-ÖØ-Þ]))?)(?=\s?[A-Za-zÀ-ÖØ-öø-ÿ“])/g;
+  const parts: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = verseMarkers.exec(text)) !== null) {
+    const verseStart = match.index + match[1].length;
+    parts.push(text.slice(lastIndex, verseStart));
+    parts.push(
+      <sup key={verseStart} className="ml-0.5 align-super text-[0.7em] leading-none">
+        {match[2]}
+      </sup>,
+    );
+    lastIndex = verseStart + match[2].length;
+  }
+
+  parts.push(text.slice(lastIndex));
+  return parts;
+}
+
+function parseDailyLiturgy(value: unknown): DailyLiturgy | null {
+  if (
+    !isRecord(value) ||
+    typeof value.data !== "string" ||
+    typeof value.liturgia !== "string" ||
+    typeof value.cor !== "string" ||
+    !isRecord(value.leituras) ||
+    !isRecord(value.oracoes) ||
+    !isRecord(value.antifonas)
+  ) {
+    return null;
+  }
+
+  const readings = [
+    { label: "1ª leitura", entries: getReadings(value.leituras.primeiraLeitura) },
+    { label: "Salmo", entries: getReadings(value.leituras.salmo) },
+    { label: "2ª leitura", entries: getReadings(value.leituras.segundaLeitura) },
+    { label: "Evangelho", entries: getReadings(value.leituras.evangelho) },
+  ].filter((reading) => reading.entries.length > 0);
+  const prayers = getLiturgyTexts(value.oracoes, [
+    { key: "coleta", label: "Oração da coleta" },
+    { key: "oferendas", label: "Oração sobre as oferendas" },
+    { key: "comunhao", label: "Oração depois da comunhão" },
+  ]);
+  const antiphons = getLiturgyTexts(value.antifonas, [
+    { key: "entrada", label: "Antífona de entrada" },
+    { key: "comunhao", label: "Antífona de comunhão" },
+  ]);
+
+  if (
+    readings.length === 0 ||
+    !readings.some((reading) => reading.entries.some((entry) => entry.text))
+  ) {
+    return null;
+  }
+
+  return {
+    date: value.data,
+    celebration: value.liturgia,
+    liturgicalSeason: getLiturgicalSeason(value.liturgia),
+    liturgicalColor: value.cor,
+    readings,
+    prayers,
+    antiphons,
+  };
+}
+
+function DailyLiturgySection() {
+  const [state, setState] = useState<DailyLiturgyState>({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    let isActive = true;
+    const timeout = window.setTimeout(() => controller.abort(), 12000);
+    setState({ status: "loading" });
+
+    fetch("https://liturgia.up.railway.app/v2/", { signal: controller.signal })
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`Liturgia API respondeu com status ${response.status}`);
+        const liturgy = parseDailyLiturgy(await response.json());
+        if (!liturgy) throw new Error("A resposta da Liturgia API está em formato inválido");
+        setState({ status: "loaded", liturgy });
+      })
+      .catch((error: unknown) => {
+        if (!isActive) return;
+        console.error("Não foi possível carregar a liturgia diária:", error);
+        setState({ status: "error" });
+      });
+
+    return () => {
+      isActive = false;
+      window.clearTimeout(timeout);
+      controller.abort();
+    };
+  }, [attempt]);
+
+  return (
+    <section className="section-y">
+      <div className="container-page">
+        <SectionTitle
+          eyebrow="Liturgia diária"
+          title="A Palavra de Deus para hoje"
+          description="Celebração e leituras da Igreja Católica Apostólica Romana."
+        />
+        <details open className="surface-card group mt-10 overflow-hidden">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset marker:content-none md:p-8">
+            <span className="text-base font-semibold">Liturgia do dia</span>
+            <ChevronDown
+              className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+              aria-hidden
+            />
+          </summary>
+          <div className="border-t border-border p-6 md:p-8" aria-live="polite">
+            {state.status === "loading" && (
+              <p className="text-sm text-muted-foreground">Carregando a liturgia de hoje…</p>
+            )}
+            {state.status === "error" && (
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <p className="text-sm text-muted-foreground">
+                  Não foi possível carregar a liturgia diária. Tente novamente em instantes.
+                </p>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="rounded-full"
+                  onClick={() => setAttempt((current) => current + 1)}
+                >
+                  Tentar novamente <RefreshCw className="size-4" aria-hidden />
+                </Button>
+              </div>
+            )}
+            {state.status === "loaded" && (
+              <>
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-medium text-primary">
+                      {state.liturgy.date} · {state.liturgy.liturgicalSeason}
+                    </p>
+                    <h3 className="mt-1 text-xl font-semibold">{state.liturgy.celebration}</h3>
+                  </div>
+                  <span className="rounded-full bg-accent px-3 py-1 text-sm text-accent-foreground">
+                    Cor litúrgica: {state.liturgy.liturgicalColor}
+                  </span>
+                </div>
+                <div className="mt-8 space-y-6">
+                  {state.liturgy.readings.map((reading) => (
+                    <section key={reading.label} className="rounded-2xl bg-surface p-5 md:p-6">
+                      <h4 className="flex items-center gap-2 text-base font-semibold">
+                        <BookOpen className="size-4 text-primary" aria-hidden />
+                        {reading.label}
+                      </h4>
+                      <div className="mt-4 space-y-5">
+                        {reading.entries.map((entry, index) => (
+                          <article key={`${entry.reference ?? reading.label}-${index}`}>
+                            {entry.reference && (
+                              <p className="text-sm font-medium text-primary">{entry.reference}</p>
+                            )}
+                            {entry.title && (
+                              <h5 className="mt-1 text-sm font-semibold">{entry.title}</h5>
+                            )}
+                            {entry.refrain && (
+                              <p className="mt-3 text-sm font-medium italic">
+                                Refrão: {entry.refrain}
+                              </p>
+                            )}
+                            {entry.text && (
+                              <p className="mt-3 whitespace-pre-line text-sm leading-7 text-muted-foreground">
+                                {renderVerseText(entry.text)}
+                              </p>
+                            )}
+                          </article>
+                        ))}
+                      </div>
+                    </section>
+                  ))}
+                </div>
+                {state.liturgy.prayers.length > 0 && (
+                  <section className="mt-8">
+                    <h4 className="text-lg font-semibold">Orações da celebração</h4>
+                    <div className="mt-4 grid gap-4 md:grid-cols-3">
+                      {state.liturgy.prayers.map((prayer) => (
+                        <article key={prayer.label} className="rounded-2xl bg-surface p-5">
+                          <h5 className="text-sm font-semibold">{prayer.label}</h5>
+                          <p className="mt-3 whitespace-pre-line text-sm leading-7 text-muted-foreground">
+                            {prayer.text}
+                          </p>
+                        </article>
+                      ))}
+                    </div>
+                  </section>
+                )}
+                {state.liturgy.antiphons.length > 0 && (
+                  <section className="mt-8">
+                    <h4 className="text-lg font-semibold">Antífonas</h4>
+                    <div className="mt-4 grid gap-4 md:grid-cols-2">
+                      {state.liturgy.antiphons.map((antiphon) => (
+                        <article key={antiphon.label} className="rounded-2xl bg-surface p-5">
+                          <h5 className="text-sm font-semibold">{antiphon.label}</h5>
+                          <p className="mt-3 whitespace-pre-line text-sm leading-7 text-muted-foreground">
+                            {antiphon.text}
+                          </p>
+                        </article>
+                      ))}
+                    </div>
+                  </section>
+                )}
+              </>
+            )}
+          </div>
+        </details>
+      </div>
+    </section>
+  );
+}
+
+type SaintOfDayState =
+  { status: "loading" } | { status: "loaded"; saint: SaintOfDayInfo } | { status: "error" };
+
+function SaintOfDaySection() {
+  const [state, setState] = useState<SaintOfDayState>({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
+
+  useEffect(() => {
+    let isActive = true;
+    setState({ status: "loading" });
+
+    fetchSaintOfDay()
+      .then((saint) => {
+        if (isActive) setState({ status: "loaded", saint });
+      })
+      .catch((error: unknown) => {
+        if (!isActive) return;
+        console.error("Não foi possível carregar o santo do dia:", error);
+        setState({ status: "error" });
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, [attempt]);
+
+  return (
+    <section className="section-y">
+      <div className="container-page">
+        <SectionTitle
+          eyebrow="Santo do dia"
+          title="Exemplos de fé para hoje"
+          description="Conheça o santo celebrado neste dia."
+        />
+        <details open className="surface-card group mt-10 overflow-hidden">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset marker:content-none md:p-8">
+            <span className="text-base font-semibold">Santo do dia</span>
+            <ChevronDown
+              className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+              aria-hidden
+            />
+          </summary>
+          <div className="border-t border-border p-6 md:p-8" aria-live="polite">
+            {state.status === "loading" && (
+              <p className="text-sm text-muted-foreground">Carregando o santo do dia…</p>
+            )}
+            {state.status === "error" && (
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <p className="text-sm text-muted-foreground">
+                  Não foi possível carregar o santo do dia. Tente novamente em instantes.
+                </p>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="rounded-full"
+                  onClick={() => setAttempt((current) => current + 1)}
+                >
+                  Tentar novamente <RefreshCw className="size-4" aria-hidden />
+                </Button>
+              </div>
+            )}
+            {state.status === "loaded" && (
+              <div className="flex flex-wrap items-start justify-between gap-6">
+                <div>
+                  <h3 className="text-xl font-semibold">{state.saint.name}</h3>
+                  {state.saint.description && (
+                    <p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">
+                      {state.saint.description}
+                    </p>
+                  )}
+                </div>
+                <a
+                  href={state.saint.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                >
+                  Conhecer a história <ExternalLink className="size-4" aria-hidden />
+                </a>
+              </div>
+            )}
+          </div>
+        </details>
+      </div>
+    </section>
+  );
+}
 
 function Home() {
   const { news, schedules } = Route.useLoaderData() as {
@@ -213,6 +585,9 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <DailyLiturgySection />
+      <SaintOfDaySection />
 
       <section className="section-y">
         <div className="container-page">

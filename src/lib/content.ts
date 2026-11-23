@@ -17,6 +17,7 @@ export type TimelineItem = (typeof staticTimeline)[number];
 export type ScheduleBlock = (typeof staticSchedules)[number];
 export type FaqItem = (typeof staticFaq)[number];
 export type PrizeItem = (typeof staticPrizes)[number];
+export type SaintOfDayInfo = { name: string; description: string; url: string };
 
 async function queryNews(): Promise<NewsPost[]> {
   try {
@@ -193,3 +194,37 @@ export const fetchAlbums = createServerFn({ method: "GET" }).handler(async () =>
     return staticAlbums;
   }
 });
+
+export const fetchSaintOfDay = createServerFn({ method: "GET" }).handler(
+  async (): Promise<SaintOfDayInfo> => {
+    const url = "https://a12.com/santuario/reze-no-santuario/santo-do-dia/";
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      if (!response.ok) {
+        throw new Error(`A12 respondeu com status ${response.status}`);
+      }
+
+      const html = await response.text();
+      const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1];
+      const name = title
+        ?.replace(/<[^>]*>/g, "")
+        .replace(/^Santo do Dia\s*[—–-]\s*/i, "")
+        .trim();
+      const descriptionTag = html.match(/<meta\b[^>]*name=["']description["'][^>]*>/i)?.[0];
+      const description = descriptionTag?.match(/\bcontent=(["'])(.*?)\1/i)?.[2];
+
+      if (!name) throw new Error("Não foi possível identificar o santo do dia na página do A12");
+
+      return {
+        name,
+        description: description ?? "",
+        url,
+      };
+    } finally {
+      clearTimeout(timeout);
+    }
+  },
+);
