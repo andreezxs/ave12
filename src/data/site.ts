@@ -27,6 +27,7 @@ export const parish = {
 export const nav = [
   { label: "Início", to: "/" },
   { label: "A Paróquia", to: "/a-paroquia" },
+  { label: "Capela N. Sra. de Fátima", to: "/capela-nossa-senhora-de-fatima" },
   { label: "História", to: "/historia" },
   { label: "Notícias", to: "/noticias" },
   { label: "Agenda", to: parish.calendarUrl },
@@ -225,16 +226,17 @@ export const timeline = [
   },
 ];
 
+export const chapelSchedule = {
+  title: "Missas na Capela Nossa Senhora de Fátima",
+  items: ["Quarta — 20h00", "Domingo — 10h00", "Dia 13 de cada mês — 20h00"],
+};
+
 export const schedules = [
   {
     title: "Missas na Igreja Matriz",
     items: ["sexta — 07h00", "Sábado — 19h30", "Domingo — 08h00, 10h00 e 18h00"],
   },
-
-  {
-    title: "Missas na Capela N.Sra de Fátima",
-    items: ["Quarta — 20h00", "Domingo — 10h00", "Dia 13 de cada mês — 20h00"],
-  },
+  chapelSchedule,
 
   {
     title: "Secretaria Paroquial",

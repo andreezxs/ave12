@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Heart, Eye, Compass, Users } from "lucide-react";
 import { PageHero, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
@@ -210,7 +210,16 @@ function Paroquia() {
                 <Reveal key={c} delay={i * 0.04}>
                   <div className="surface-card flex items-center gap-3 p-5">
                     <Users className="size-4.5 shrink-0 text-primary" aria-hidden />
-                    <span className="text-sm font-medium">{c}</span>
+                    {c === "Ceb Nossa Senhora de Fátima" ? (
+                      <Link
+                        to="/capela-nossa-senhora-de-fatima"
+                        className="text-sm font-medium hover:text-primary"
+                      >
+                        {c} · Conheça a capela
+                      </Link>
+                    ) : (
+                      <span className="text-sm font-medium">{c}</span>
+                    )}
                   </div>
                 </Reveal>
               ))}

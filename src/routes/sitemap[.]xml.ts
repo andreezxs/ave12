@@ -19,6 +19,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/a-paroquia", changefreq: "monthly", priority: "0.8" },
+          { path: "/capela-nossa-senhora-de-fatima", changefreq: "monthly", priority: "0.7" },
           { path: "/historia", changefreq: "monthly", priority: "0.7" },
           { path: "/noticias", changefreq: "daily", priority: "0.9" },
           // agenda route removed; link points to external calendar

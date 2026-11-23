@@ -14,6 +14,7 @@ import { Route as AParoquiaRouteImport } from './routes/a-paroquia'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as Ave12RouteImport } from './routes/ave12'
 import { Route as CamisetasRouteImport } from './routes/camisetas'
+import { Route as CapelaNossaSenhoraDeFatimaRouteImport } from './routes/capela-nossa-senhora-de-fatima'
 import { Route as CentroCatequeticoRouteImport } from './routes/centro-catequetico'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -52,6 +53,12 @@ const CamisetasRoute = CamisetasRouteImport.update({
   path: '/camisetas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CapelaNossaSenhoraDeFatimaRoute =
+  CapelaNossaSenhoraDeFatimaRouteImport.update({
+    id: '/capela-nossa-senhora-de-fatima',
+    path: '/capela-nossa-senhora-de-fatima',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CentroCatequeticoRoute = CentroCatequeticoRouteImport.update({
   id: '/centro-catequetico',
   path: '/centro-catequetico',
@@ -119,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/agenda': typeof AgendaRoute
   '/ave12': typeof Ave12Route
   '/camisetas': typeof CamisetasRoute
+  '/capela-nossa-senhora-de-fatima': typeof CapelaNossaSenhoraDeFatimaRoute
   '/centro-catequetico': typeof CentroCatequeticoRoute
   '/contato': typeof ContatoRoute
   '/faq': typeof FaqRoute
@@ -138,6 +146,7 @@ export interface FileRoutesByTo {
   '/agenda': typeof AgendaRoute
   '/ave12': typeof Ave12Route
   '/camisetas': typeof CamisetasRoute
+  '/capela-nossa-senhora-de-fatima': typeof CapelaNossaSenhoraDeFatimaRoute
   '/centro-catequetico': typeof CentroCatequeticoRoute
   '/contato': typeof ContatoRoute
   '/faq': typeof FaqRoute
@@ -158,6 +167,7 @@ export interface FileRoutesById {
   '/agenda': typeof AgendaRoute
   '/ave12': typeof Ave12Route
   '/camisetas': typeof CamisetasRoute
+  '/capela-nossa-senhora-de-fatima': typeof CapelaNossaSenhoraDeFatimaRoute
   '/centro-catequetico': typeof CentroCatequeticoRoute
   '/contato': typeof ContatoRoute
   '/faq': typeof FaqRoute
@@ -179,6 +189,7 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/ave12'
     | '/camisetas'
+    | '/capela-nossa-senhora-de-fatima'
     | '/centro-catequetico'
     | '/contato'
     | '/faq'
@@ -198,6 +209,7 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/ave12'
     | '/camisetas'
+    | '/capela-nossa-senhora-de-fatima'
     | '/centro-catequetico'
     | '/contato'
     | '/faq'
@@ -217,6 +229,7 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/ave12'
     | '/camisetas'
+    | '/capela-nossa-senhora-de-fatima'
     | '/centro-catequetico'
     | '/contato'
     | '/faq'
@@ -237,6 +250,7 @@ export interface RootRouteChildren {
   AgendaRoute: typeof AgendaRoute
   Ave12Route: typeof Ave12Route
   CamisetasRoute: typeof CamisetasRoute
+  CapelaNossaSenhoraDeFatimaRoute: typeof CapelaNossaSenhoraDeFatimaRoute
   CentroCatequeticoRoute: typeof CentroCatequeticoRoute
   ContatoRoute: typeof ContatoRoute
   FaqRoute: typeof FaqRoute
@@ -286,6 +300,13 @@ declare module '@tanstack/react-router' {
       path: '/camisetas'
       fullPath: '/camisetas'
       preLoaderRoute: typeof CamisetasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capela-nossa-senhora-de-fatima': {
+      id: '/capela-nossa-senhora-de-fatima'
+      path: '/capela-nossa-senhora-de-fatima'
+      fullPath: '/capela-nossa-senhora-de-fatima'
+      preLoaderRoute: typeof CapelaNossaSenhoraDeFatimaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/centro-catequetico': {
@@ -381,6 +402,7 @@ const rootRouteChildren: RootRouteChildren = {
   AgendaRoute: AgendaRoute,
   Ave12Route: Ave12Route,
   CamisetasRoute: CamisetasRoute,
+  CapelaNossaSenhoraDeFatimaRoute: CapelaNossaSenhoraDeFatimaRoute,
   CentroCatequeticoRoute: CentroCatequeticoRoute,
   ContatoRoute: ContatoRoute,
   FaqRoute: FaqRoute,
