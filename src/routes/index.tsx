@@ -20,6 +20,7 @@ import { getNewsImage } from "@/lib/news-image";
 import heroImg from "@/assets/hero-igreja.jpeg";
 import interiorImg from "@/assets/interior-igreja.jpeg";
 import comunidadeImg from "@/assets/comunidade.jpg";
+import paroquiaLogo from "@/assets/PAROQUIA.svg";
 
 export const Route = createFileRoute("/")({
   loader: async () => ({
@@ -314,31 +315,41 @@ function Home() {
 
       <section className="section-y">
         <div className="container-page">
-          <div className="relative overflow-hidden rounded-4xl bg-gradient-brand px-8 py-16 text-center md:px-16 md:py-24">
-            <Reveal>
-              <span className="text-xs font-semibold tracking-[0.2em] text-primary-foreground/80 uppercase">
-                Jubileu de Prata
-              </span>
-              <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold text-primary-foreground md:text-5xl">
-                "Fazei tudo o que Ele vos disser" Jo 2,5
-              </h2>
-              <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/85">
-                25 anos de fé, comunhão e missão
-              </p>
-              <div className="mt-9 flex flex-wrap justify-center gap-3">
-                <Button asChild size="lg" variant="secondary" className="rounded-full">
-                  <Link to="/ave12">Conhecer o Jubileu de Prata</Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full border-[oklch(1_0_0/40%)] bg-transparent text-primary-foreground hover:bg-[oklch(1_0_0/15%)] hover:text-primary-foreground"
-                >
-                  <Link to="/show-de-premios">Show de Prêmios</Link>
-                </Button>
-              </div>
-            </Reveal>
+          <div className="relative overflow-hidden rounded-4xl bg-gradient-brand px-8 py-16 md:px-12 md:py-20">
+            <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_minmax(240px,38%)]">
+              <Reveal className="text-center">
+                <span className="text-xs font-semibold tracking-[0.2em] text-primary-foreground/80 uppercase">
+                  Jubileu de Prata
+                </span>
+                <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold text-primary-foreground md:text-5xl">
+                  "Fazei tudo o que Ele vos disser" Jo 2,5
+                </h2>
+                <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/85">
+                  25 anos de fé, comunhão e missão
+                </p>
+                <div className="mt-9 flex flex-wrap justify-center gap-3">
+                  <Button asChild size="lg" variant="secondary" className="rounded-full">
+                    <Link to="/ave12">Conhecer o Jubileu de Prata</Link>
+                  </Button>
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full border-[oklch(1_0_0/40%)] bg-transparent text-primary-foreground hover:bg-[oklch(1_0_0/15%)] hover:text-primary-foreground"
+                  >
+                    <Link to="/show-de-premios">Show de Prêmios</Link>
+                  </Button>
+                </div>
+              </Reveal>
+              <Reveal delay={0.1} className="flex justify-center">
+                <img
+                  src={paroquiaLogo}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-56 opacity-90 md:w-full md:max-w-[400px]"
+                />
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
