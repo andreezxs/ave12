@@ -99,24 +99,14 @@ function Contato() {
 
       <section className="pb-24">
         <div className="container-page">
-          <div className="surface-card flex flex-col items-start gap-5 p-8 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-xs font-semibold tracking-[0.16em] text-primary uppercase">
-                Localização
-              </p>
-              <h2 className="mt-2 text-2xl font-semibold">
-                Paróquia Nossa Senhora Aparecida
-              </h2>
-              <p className="mt-2 text-sm text-muted-foreground">{parish.address}</p>
-            </div>
-            <a
-              href={parish.maps}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
-            >
-              Abrir no Apple Maps
-            </a>
+          <div className="overflow-hidden rounded-3xl border border-border shadow-[var(--shadow-soft)]">
+            <iframe
+              title="Localização da Paróquia Nossa Senhora Aparecida no Google Maps"
+              src={parish.mapsEmbed}
+              loading="lazy"
+              className="h-96 w-full border-0"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>

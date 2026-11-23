@@ -16,7 +16,9 @@ export const parish = {
   instagram: "https://instagram.com/pnsa_mga",
   facebook: "https://facebook.com/pnsa.maringa",
   youtube: "https://youtube.com/",
-  maps: "https://maps.apple.com/?q=Par%C3%B3quia%20Nossa%20Senhora%20Aparecida%2C%20Pra%C3%A7a%20Nossa%20Senhora%20Aparecida%2C%20Vila%20Esperan%C3%A7a%2C%20Maring%C3%A1%2C%20PR",
+  maps: "https://www.google.com/maps/search/?api=1&query=Paróquia+Nossa+Senhora+Aparecida+Praça+Nossa+Senhora+Aparecida+Vila+Esperança+Maringá",
+  mapsEmbed:
+    "https://www.google.com/maps?q=Par%C3%B3quia%20Nossa%20Senhora%20Aparecida%20Pra%C3%A7a%20Nossa%20Senhora%20Aparecida%20Vila%20Esperan%C3%A7a%20Maring%C3%A1&output=embed",
   calendarUrl: "https://agendamento.p7group.cloud/calendario?paroquia_id=1&mes=",
   shopUrl: "https://www.nuvemshop.com.br/",
   ticketsUrl: "https://nomineingressos.com/pnsa_mga/",
