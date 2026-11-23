@@ -12,6 +12,7 @@ import { type ReactNode, useEffect } from "react";
 import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FaqChatWidget } from "@/components/site/FaqChatWidget";
 import { parish } from "@/data/site";
 
 function NotFoundComponent() {
@@ -197,6 +198,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
+      <FaqChatWidget />
     </QueryClientProvider>
   );
 }
