@@ -1,12 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { HandHeart, Target, Sparkles } from "lucide-react";
+import { CalendarDays, Clock, HandHeart, MapPin, Target, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
-import { parish } from "@/data/site";
+import { formatDate, parish } from "@/data/site";
+import { fetchAgenda, type AgendaItem } from "@/lib/content";
 import comunidadeImg from "@/assets/comunidade.jpg";
 
 export const Route = createFileRoute("/ave12")({
+  loader: async () => ({ agenda: await fetchAgenda() }),
   component: Ave12,
   head: () => ({
     meta: [
@@ -57,6 +59,9 @@ const jubileePrayer = [
 ];
 
 function Ave12() {
+  const { agenda } = Route.useLoaderData() as { agenda: AgendaItem[] };
+  const jubileeSchedule = agenda.filter((item) => item.category === "Jubileu de Prata");
+
   return (
     <>
       <PageHero
@@ -76,6 +81,48 @@ function Ave12() {
           </Button>
         </div>
       </PageHero>
+
+      <section className="section-y bg-surface">
+        <div className="container-page">
+          <SectionTitle
+            eyebrow="Programação"
+            title="Jubileu de Prata"
+            description="Acompanhe as atividades e celebrações especiais da nossa comunidade."
+          />
+          {jubileeSchedule.length > 0 ? (
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+              {jubileeSchedule.map((item, i) => (
+                <Reveal key={`${item.date}-${item.title}`} delay={i * 0.04}>
+                  <article className="surface-card h-full p-6">
+                    <span className="text-xs font-semibold tracking-wide text-primary uppercase">
+                      {item.category}
+                    </span>
+                    <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+                    <div className="mt-4 space-y-2 text-sm text-muted-foreground">
+                      <p className="flex items-center gap-2">
+                        <CalendarDays className="size-4 shrink-0 text-primary" aria-hidden />
+                        {formatDate(item.date)}
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Clock className="size-4 shrink-0 text-primary" aria-hidden />
+                        {item.time}
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <MapPin className="size-4 shrink-0 text-primary" aria-hidden />
+                        {item.place}
+                      </p>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-8 rounded-2xl border border-dashed border-border bg-background p-6 text-sm text-muted-foreground">
+              A programação do Jubileu de Prata será divulgada em breve.
+            </p>
+          )}
+        </div>
+      </section>
 
       <section className="section-y">
         <div className="container-page grid gap-6 md:grid-cols-3">

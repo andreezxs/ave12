@@ -79,6 +79,17 @@ VALUES (
 
 Use um `slug` único para cada notícia. A categoria define os filtros e também prioriza notícias do mesmo tema em “Leia também”.
 
+## Programação do Jubileu no Neon
+
+A seção de programação da página do Jubileu de Prata lê os eventos da tabela `agenda` cuja categoria seja `Jubileu de Prata`. Para adicionar uma atividade, use o Neon SQL Editor:
+
+```sql
+INSERT INTO agenda (category, title, date, time, place)
+VALUES ('Jubileu de Prata', 'NOME DA ATIVIDADE', 'AAAA-MM-DD', 'HORÁRIO', 'LOCAL');
+```
+
+Substitua os valores de exemplo e insira uma linha para cada atividade. Não execute `npm run db:seed` em um banco com conteúdo próprio, pois ele apaga e recria os dados de exemplo.
+
 ## Deploy na Vercel
 
 1. Envie o projeto para um repositório Git e importe esse repositório na Vercel.
