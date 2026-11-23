@@ -13,15 +13,23 @@ import {
 import { chapelSchedule, parish } from "@/data/site";
 import chapelWedding from "@/assets/CASA CAPELA.jpeg";
 import chapelWeddingDetail from "@/assets/CASA CAPELA 02.jpeg";
+import matrizWedding from "@/assets/CASA MATRIZ.jpeg";
 
 const weddingPhotos = [
   {
     src: chapelWedding,
     alt: "Corredor decorado com flores para uma celebração de casamento",
+    caption: "Capela Nossa Senhora de Fátima",
   },
   {
     src: chapelWeddingDetail,
     alt: "Altar preparado com flores para uma celebração de casamento",
+    caption: "Capela Nossa Senhora de Fátima",
+  },
+  {
+    src: matrizWedding,
+    alt: "Interior da Igreja Matriz Nossa Senhora Aparecida decorado para um casamento",
+    caption: "Igreja Matriz Nossa Senhora Aparecida",
   },
 ];
 
@@ -193,13 +201,18 @@ function WeddingGallery() {
       <CarouselContent>
         {weddingPhotos.map((photo) => (
           <CarouselItem key={photo.src}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-accent/60">
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                className="absolute inset-0 size-full object-contain p-1"
-              />
-            </div>
+            <figure>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-accent/60">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="absolute inset-0 size-full object-contain p-1"
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-sm font-medium text-muted-foreground">
+                {photo.caption}
+              </figcaption>
+            </figure>
           </CarouselItem>
         ))}
       </CarouselContent>

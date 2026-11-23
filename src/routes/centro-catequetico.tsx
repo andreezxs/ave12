@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { parish } from "@/data/site";
-import catecheticalCenterVideo from "@/assets/cent cat int.mp4";
+import catecheticalCenterVideo from "@/assets/centro-catequetico-h264.mp4";
 
 export const Route = createFileRoute("/centro-catequetico")({
   component: CentroCatequetico,
