@@ -6,6 +6,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { formatDate, parish } from "@/data/site";
 import { fetchAgenda, type AgendaItem } from "@/lib/content";
 import comunidadeImg from "@/assets/comunidade.jpg";
+import jubileePrayerAudio from "@/assets/AUD ORAÇÃO JUBILEU.mp3";
 
 export const Route = createFileRoute("/ave12")({
   loader: async () => ({ agenda: await fetchAgenda() }),
@@ -39,12 +40,12 @@ const pillars = [
   {
     icon: Sparkles,
     title: "Como surgiu",
-    text: "Ao longo desses 25 anos, sacerdotes, religiosos, lideranças, agentes de pastoral, benfeitores e fiéis participaram ativamente da missão evangelizadora da Paróquia, fortalecendo a vida comunitária e testemunhando a fé em Jesus Cristo. Mais do que celebrar uma data, este jubileu convida toda a comunidade a valorizar sua história, renovar o compromisso com a missão da Igreja e continuar construindo, juntos, os próximos capítulos dessa caminhada de fé.",
+    text: "Ao longo desses 25 anos, sacerdotes, religiosos, lideranças, agentes de pastoral, benfeitores e fiéis participaram ativamente da missão evangelizadora da Paróquia, fortalecendo a vida comunitária e testemunhando a fé em Jesus Cristo.",
   },
   {
     icon: HandHeart,
     title: "Finalidade",
-    text: "Transformar a colaboração em corresponsabilidade: cada família participa da missão com o que pode, ao longo dos doze meses do ano.",
+    text: "Mais do que celebrar uma data, este jubileu convida toda a comunidade a valorizar sua história, renovar o compromisso com a missão da Igreja e continuar construindo, juntos, os próximos capítulos dessa caminhada de fé.",
   },
 ];
 
@@ -142,16 +143,32 @@ function Ave12() {
 
       <section className="section-y bg-surface">
         <div className="container-page grid items-center gap-12 lg:grid-cols-2">
-          <Reveal>
-            <img
-              src={comunidadeImg}
-              alt="Comunidade reunida em ação do Jubileu de Prata"
-              loading="lazy"
-              width={1600}
-              height={1000}
-              className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
-            />
-          </Reveal>
+          <div className="space-y-6">
+            <Reveal>
+              <img
+                src={comunidadeImg}
+                alt="Comunidade reunida em ação do Jubileu de Prata"
+                loading="lazy"
+                width={1600}
+                height={1000}
+                className="w-full rounded-3xl object-cover shadow-[var(--shadow-lift)]"
+              />
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="glass rounded-3xl p-6 shadow-[var(--shadow-soft)]">
+                <h3 className="text-sm font-semibold">Áudio Oração do Jubileu</h3>
+                <audio
+                  controls
+                  controlsList="nodownload"
+                  preload="metadata"
+                  className="mt-4 w-full"
+                >
+                  <source src={jubileePrayerAudio} type="audio/mpeg" />
+                  Seu navegador não oferece suporte à reprodução de áudio.
+                </audio>
+              </div>
+            </Reveal>
+          </div>
           <div>
             <SectionTitle
               eyebrow="Oração"
