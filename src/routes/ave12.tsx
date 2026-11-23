@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { HandHeart, Target, Sparkles, FileBarChart } from "lucide-react";
+import { HandHeart, Target, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
@@ -32,18 +32,28 @@ const pillars = [
   {
     icon: Target,
     title: "Objetivos",
-    text: "Garantir a manutenção do templo, sustentar as pastorais, ampliar as ações sociais e viabilizar as obras aprovadas pelo conselho paroquial.",
+    text: "O Jubileu representa um tempo de memória, gratidão e renovação. É uma oportunidade de recordar os caminhos percorridos, reconhecer as conquistas e agradecer a Deus por todos aqueles que contribuíram para a construção desta história.",
   },
   {
     icon: Sparkles,
     title: "Como surgiu",
-    text: "A campanha nasceu do conselho econômico junto à PASCOM, com o desejo de substituir pedidos pontuais por um compromisso contínuo e transparente.",
+    text: "Ao longo desses 25 anos, sacerdotes, religiosos, lideranças, agentes de pastoral, benfeitores e fiéis participaram ativamente da missão evangelizadora da Paróquia, fortalecendo a vida comunitária e testemunhando a fé em Jesus Cristo. Mais do que celebrar uma data, este jubileu convida toda a comunidade a valorizar sua história, renovar o compromisso com a missão da Igreja e continuar construindo, juntos, os próximos capítulos dessa caminhada de fé.",
   },
   {
     icon: HandHeart,
     title: "Finalidade",
     text: "Transformar a colaboração em corresponsabilidade: cada família participa da missão com o que pode, ao longo dos doze meses do ano.",
   },
+];
+
+const jubileePrayer = [
+  "Senhor Jesus, Pastor eterno, neste Jubileu colocamo-nos aos teus pés com o coração agradecido pelos 24 anos da Paróquia Nossa Senhora Aparecida; Tu foste nossa luz nas noites, força nas lutas e esperança nas travessias.",
+  "Recordamos Contigo cada gesto de evangelização, cada pastoral, cada comunidade que, entre lágrimas e sorrisos, fez florescer o teu Reino.",
+  "Maria Santíssima, Mãe Aparecida, envolve-nos com teu manto e ensina-nos a guardar no íntimo a tua palavra: “Faça o que Ele vos disser”.",
+  "Jesus te pedimos, se esfriarmos, reacende-nos; se cansarmos, renova-nos; se vacilarmos, sustenta-nos.",
+  "Derrama sobre nós um novo Pentecostes e faze de nossas sete comunidades discípulas ardentes e missionárias corajosas.",
+  "E agora, Senhor, humildemente suplicamos: dai-nos a tua bênção e faze deste Ano Jubilar um tempo de graça, fidelidade e profundo amor a Ti.",
+  "Amém.",
 ];
 
 function Ave12() {
@@ -104,47 +114,11 @@ function Ave12() {
             <Reveal delay={0.1} className="mt-8">
               <div className="rounded-3xl border border-border bg-background p-7 shadow-[var(--shadow-soft)]">
                 <p className="whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
-                  Senhor Jesus, Pastor eterno, neste Jubileu colocamo-nos aos teus pés com o coração agradecido pelos 24 anos da Paróquia Nossa Senhora Aparecida; Tu foste nossa luz nas noites, força nas lutas e esperança nas travessias.
-
-Recordamos Contigo cada gesto de evangelização, cada pastoral, cada comunidade que, entre lágrimas e sorrisos, fez florescer o teu Reino.
-
-Maria Santíssima, Mãe Aparecida, envolve-nos com teu manto e ensina-nos a guardar no íntimo a tua palavra: “Faça o que Ele vos disser”.
-
-Jesus te pedimos, se esfriarmos, reacende-nos; se cansarmos, renova-nos; se vacilarmos, sustenta-nos.
-
-Derrama sobre nós um novo Pentecostes e faze de nossas sete comunidades discípulas ardentes e missionárias corajosas.
-
-E agora, Senhor, humildemente suplicamos: dai-nos a tua bênção e faze deste Ano Jubilar um tempo de graça, fidelidade e profundo amor a Ti.
-
-Amém.
+                  {jubileePrayer.join("\n\n")}
                 </p>
               </div>
             </Reveal>
           </div>
-        </div>
-      </section>
-
-      <section className="section-y">
-        <div className="container-page">
-          <SectionTitle
-            eyebrow="Transparência"
-            title="Prestação de contas"
-            description="Cada real recebido é registrado e publicado. Esta área receberá os relatórios periódicos aprovados pelo conselho econômico."
-          />
-          <Reveal delay={0.1} className="mt-8 space-y-3">
-            {["1º trimestre", "2º trimestre", "3º trimestre", "4º trimestre"].map((label) => (
-              <div
-                key={label}
-                className="flex items-center justify-between rounded-2xl border border-dashed border-border bg-background p-5"
-              >
-                <span className="flex items-center gap-3 text-sm font-medium">
-                  <FileBarChart className="size-4.5 text-primary" aria-hidden />
-                  Relatório — {label}
-                </span>
-                <span className="text-xs text-muted-foreground">Em breve</span>
-              </div>
-            ))}
-          </Reveal>
         </div>
       </section>
 

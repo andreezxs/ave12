@@ -116,7 +116,11 @@ function Home() {
           </Reveal>
           <Reveal delay={0.12} className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg" className="rounded-full">
-              <a href={parish.shopUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={`${parish.whatsapp}?text=${encodeURIComponent("Quero comprar a camiseta do jubileu")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Comprar camiseta <ArrowRight className="size-4" aria-hidden />
               </a>
             </Button>
@@ -137,6 +141,14 @@ function Home() {
               className="rounded-full border-[oklch(1_0_0/35%)] bg-[oklch(1_0_0/10%)] text-[oklch(1_0_0)] backdrop-blur-md hover:bg-[oklch(1_0_0/20%)] hover:text-[oklch(1_0_0)]"
             >
               <Link to="/a-paroquia">Conheça a paróquia</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full border-[oklch(1_0_0/35%)] bg-[oklch(1_0_0/10%)] text-[oklch(1_0_0)] backdrop-blur-md hover:bg-[oklch(1_0_0/20%)] hover:text-[oklch(1_0_0)]"
+            >
+              <Link to="/centro-catequetico">Conhecer o Centro Catequético</Link>
             </Button>
           </Reveal>
         </div>
@@ -290,7 +302,7 @@ function Home() {
                   do cotidiano. Que esta paróquia seja sempre uma casa de acolhida para todos.”
                 </blockquote>
                 <figcaption className="mt-5 text-sm text-muted-foreground">
-                  Pe. Pároco — Paróquia Nossa Senhora Aparecida
+                  Pároco — Paróquia Nossa Senhora Aparecida
                 </figcaption>
               </figure>
             </Reveal>
@@ -308,11 +320,10 @@ function Home() {
                 Jubileu de Prata
               </span>
               <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold text-primary-foreground md:text-5xl">
-                Doze meses sustentando a missão da nossa paróquia
+                "Fazei tudo o que Ele vos disser" Jo 2,5
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/85">
-                Uma contribuição mensal que garante obras, pastorais e ações sociais durante todo o
-                ano.
+                25 anos de fé, comunhão e missão
               </p>
               <div className="mt-9 flex flex-wrap justify-center gap-3">
                 <Button asChild size="lg" variant="secondary" className="rounded-full">

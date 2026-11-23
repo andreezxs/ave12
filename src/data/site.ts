@@ -31,6 +31,7 @@ export const nav = [
   { label: "Notícias", to: "/noticias" },
   { label: "Agenda", to: parish.calendarUrl },
   { label: "Jubileu de Prata", to: "/ave12" },
+  { label: "Centro Catequético", to: "/centro-catequetico" },
   { label: "Camisetas", to: "/camisetas" },
   { label: "Show de Prêmios", to: "/show-de-premios" },
   { label: "Premiações", to: "/premiacoes" },

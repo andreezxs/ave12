@@ -14,6 +14,7 @@ import { Route as AParoquiaRouteImport } from './routes/a-paroquia'
 import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as Ave12RouteImport } from './routes/ave12'
 import { Route as CamisetasRouteImport } from './routes/camisetas'
+import { Route as CentroCatequeticoRouteImport } from './routes/centro-catequetico'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as GaleriaRouteImport } from './routes/galeria'
@@ -49,6 +50,11 @@ const Ave12Route = Ave12RouteImport.update({
 const CamisetasRoute = CamisetasRouteImport.update({
   id: '/camisetas',
   path: '/camisetas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CentroCatequeticoRoute = CentroCatequeticoRouteImport.update({
+  id: '/centro-catequetico',
+  path: '/centro-catequetico',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContatoRoute = ContatoRouteImport.update({
@@ -113,6 +119,7 @@ export interface FileRoutesByFullPath {
   '/agenda': typeof AgendaRoute
   '/ave12': typeof Ave12Route
   '/camisetas': typeof CamisetasRoute
+  '/centro-catequetico': typeof CentroCatequeticoRoute
   '/contato': typeof ContatoRoute
   '/faq': typeof FaqRoute
   '/galeria': typeof GaleriaRoute
@@ -131,6 +138,7 @@ export interface FileRoutesByTo {
   '/agenda': typeof AgendaRoute
   '/ave12': typeof Ave12Route
   '/camisetas': typeof CamisetasRoute
+  '/centro-catequetico': typeof CentroCatequeticoRoute
   '/contato': typeof ContatoRoute
   '/faq': typeof FaqRoute
   '/galeria': typeof GaleriaRoute
@@ -150,6 +158,7 @@ export interface FileRoutesById {
   '/agenda': typeof AgendaRoute
   '/ave12': typeof Ave12Route
   '/camisetas': typeof CamisetasRoute
+  '/centro-catequetico': typeof CentroCatequeticoRoute
   '/contato': typeof ContatoRoute
   '/faq': typeof FaqRoute
   '/galeria': typeof GaleriaRoute
@@ -170,6 +179,7 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/ave12'
     | '/camisetas'
+    | '/centro-catequetico'
     | '/contato'
     | '/faq'
     | '/galeria'
@@ -188,6 +198,7 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/ave12'
     | '/camisetas'
+    | '/centro-catequetico'
     | '/contato'
     | '/faq'
     | '/galeria'
@@ -206,6 +217,7 @@ export interface FileRouteTypes {
     | '/agenda'
     | '/ave12'
     | '/camisetas'
+    | '/centro-catequetico'
     | '/contato'
     | '/faq'
     | '/galeria'
@@ -225,6 +237,7 @@ export interface RootRouteChildren {
   AgendaRoute: typeof AgendaRoute
   Ave12Route: typeof Ave12Route
   CamisetasRoute: typeof CamisetasRoute
+  CentroCatequeticoRoute: typeof CentroCatequeticoRoute
   ContatoRoute: typeof ContatoRoute
   FaqRoute: typeof FaqRoute
   GaleriaRoute: typeof GaleriaRoute
@@ -273,6 +286,13 @@ declare module '@tanstack/react-router' {
       path: '/camisetas'
       fullPath: '/camisetas'
       preLoaderRoute: typeof CamisetasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/centro-catequetico': {
+      id: '/centro-catequetico'
+      path: '/centro-catequetico'
+      fullPath: '/centro-catequetico'
+      preLoaderRoute: typeof CentroCatequeticoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contato': {
@@ -361,6 +381,7 @@ const rootRouteChildren: RootRouteChildren = {
   AgendaRoute: AgendaRoute,
   Ave12Route: Ave12Route,
   CamisetasRoute: CamisetasRoute,
+  CentroCatequeticoRoute: CentroCatequeticoRoute,
   ContatoRoute: ContatoRoute,
   FaqRoute: FaqRoute,
   GaleriaRoute: GaleriaRoute,
