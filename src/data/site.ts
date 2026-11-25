@@ -278,6 +278,237 @@ export const schedules = [
   },
 ];
 
+export interface CatechesisContent {
+  slug: string;
+  category: string;
+  title: string;
+  summary: string;
+  content: string[];
+  reference: string;
+  sourceUrl: string;
+}
+
+export const catechesisContents: CatechesisContent[] = [
+  {
+    slug: "caminho-da-catequese",
+    category: "Fundamentos",
+    title: "O caminho da catequese",
+    summary: "Uma caminhada para conhecer Jesus, aprofundar a fé e vivê-la em comunidade.",
+    content: [
+      "A catequese é uma formação na fé cristã que ajuda a compreender a mensagem de Jesus e a integrar essa mensagem à vida.",
+      "Esse caminho envolve escuta da Palavra, oração, celebração e convivência na comunidade. Aprender sobre a fé é também buscar colocá-la em prática no cuidado com o próximo.",
+    ],
+    reference: "Catecismo da Igreja Católica, §§ 4–10",
+    sourceUrl: "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html",
+  },
+  {
+    slug: "biblia-e-palavra-de-deus",
+    category: "Bíblia",
+    title: "A Bíblia e a Palavra de Deus",
+    summary: "As Escrituras apresentam a história da salvação e convidam à escuta de Deus.",
+    content: [
+      "A Bíblia reúne os livros do Antigo e do Novo Testamento. Para os cristãos, nela se encontra o testemunho da ação de Deus na história e, de modo central, a vida e a mensagem de Jesus Cristo.",
+      "A leitura pode ser feita individualmente e em comunidade. Contexto, oração e partilha ajudam a compreender os textos e a relacioná-los com a vida cotidiana.",
+    ],
+    reference: "Catecismo da Igreja Católica, §§ 101–141",
+    sourceUrl: "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html",
+  },
+  {
+    slug: "jesus-cristo",
+    category: "Jesus Cristo",
+    title: "Jesus Cristo, centro da fé cristã",
+    summary:
+      "Conhecer a vida, as palavras e as ações de Jesus é essencial para a caminhada cristã.",
+    content: [
+      "Os Evangelhos narram a vida e a missão de Jesus: seus ensinamentos, sua atenção aos pobres e aos que sofriam, sua morte e sua ressurreição.",
+      "A catequese apresenta Jesus e convida cada pessoa a conhecer sua mensagem, cultivar a relação com Ele e seguir seu exemplo de amor, serviço e perdão.",
+    ],
+    reference: "Catecismo da Igreja Católica, §§ 422–429",
+    sourceUrl: "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html",
+  },
+  {
+    slug: "sacramentos",
+    category: "Sacramentos",
+    title: "Os sacramentos na vida cristã",
+    summary: "Sinais celebrados pela Igreja que acompanham a vida de fé.",
+    content: [
+      "A Igreja Católica celebra sete sacramentos: Batismo, Confirmação, Eucaristia, Reconciliação, Unção dos Enfermos, Ordem e Matrimônio.",
+      "Cada sacramento tem uma celebração e um significado próprios. A preparação catequética ajuda a compreender esses sinais e a participar deles com consciência e fé.",
+    ],
+    reference: "Catecismo da Igreja Católica, §§ 1113–1134",
+    sourceUrl: "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html",
+  },
+  {
+    slug: "oracao",
+    category: "Oração",
+    title: "Aprender a rezar",
+    summary: "A oração é diálogo com Deus, vivido em momentos pessoais e comunitários.",
+    content: [
+      "Rezar pode incluir louvor, agradecimento, pedido, intercessão e silêncio. A oração cristã encontra em Jesus seu modelo e é alimentada pela Palavra de Deus.",
+      "Não existe apenas uma forma de rezar: a comunidade cristã conhece orações tradicionais, celebrações litúrgicas e momentos de oração espontânea.",
+    ],
+    reference: "Catecismo da Igreja Católica, §§ 2558–2565",
+    sourceUrl: "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html",
+  },
+  {
+    slug: "liturgia",
+    category: "Liturgia",
+    title: "A liturgia e a comunidade",
+    summary:
+      "Na liturgia, a comunidade se reúne para celebrar a fé e participar da vida da Igreja.",
+    content: [
+      "A liturgia reúne orações, leituras, gestos e sinais. A celebração da Eucaristia ocupa lugar central na vida litúrgica católica.",
+      "Participar da liturgia é também escutar, responder, cantar e rezar junto com a comunidade, respeitando os tempos e os símbolos próprios de cada celebração.",
+    ],
+    reference: "Catecismo da Igreja Católica, §§ 1066–1075",
+    sourceUrl: "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html",
+  },
+];
+
+export interface CatecheticalBook {
+  slug: string;
+  title: string;
+  author: string;
+  format: "Livro" | "Documento pontifício";
+  theme: string;
+  description: string;
+  url: string;
+}
+
+export interface CatecheticalSource {
+  slug: string;
+  title: string;
+  author: string;
+  format: "Formação online" | "Artigo online";
+  theme: string;
+  description: string;
+  url: string;
+}
+
+export const catecheticalBooks: CatecheticalBook[] = [
+  {
+    slug: "catecismo-da-igreja-catolica",
+    title: "Catecismo da Igreja Católica",
+    author: "Igreja Católica",
+    format: "Livro",
+    theme: "Fundamentos da fé",
+    description: "Apresenta a fé católica, a celebração dos sacramentos, a vida cristã e a oração.",
+    url: "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html",
+  },
+  {
+    slug: "compendio-do-catecismo",
+    title: "Compêndio do Catecismo da Igreja Católica",
+    author: "Igreja Católica",
+    format: "Livro",
+    theme: "Perguntas e respostas",
+    description:
+      "Uma síntese da fé católica em perguntas e respostas, com orações e referências essenciais.",
+    url: "https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_po.html",
+  },
+  {
+    slug: "evangelii-gaudium",
+    title: "Evangelii Gaudium",
+    author: "Papa Francisco",
+    format: "Documento pontifício",
+    theme: "Evangelização e missão",
+    description:
+      "Reflexão sobre o anúncio do Evangelho, a vida da comunidade e a missão da Igreja.",
+    url: "https://www.vatican.va/content/francesco/pt/apost_exhortations/documents/papa-francesco_esortazione-ap_20131124_evangelii-gaudium.html",
+  },
+  {
+    slug: "laudato-si",
+    title: "Laudato Si'",
+    author: "Papa Francisco",
+    format: "Documento pontifício",
+    theme: "Criação e cuidado da casa comum",
+    description:
+      "Ensinamentos sobre o cuidado da criação e a responsabilidade com as pessoas e o planeta.",
+    url: "https://www.vatican.va/content/francesco/pt/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html",
+  },
+  {
+    slug: "fratelli-tutti",
+    title: "Fratelli Tutti",
+    author: "Papa Francisco",
+    format: "Documento pontifício",
+    theme: "Fraternidade e amizade social",
+    description: "Uma reflexão sobre fraternidade, diálogo, solidariedade e construção da paz.",
+    url: "https://www.vatican.va/content/francesco/pt/encyclicals/documents/papa-francesco_20201003_enciclica-fratelli-tutti.html",
+  },
+  {
+    slug: "christus-vivit",
+    title: "Christus Vivit",
+    author: "Papa Francisco",
+    format: "Documento pontifício",
+    theme: "Juventude e vocação",
+    description:
+      "Uma mensagem aos jovens sobre Jesus Cristo, vocação, discernimento e participação na Igreja.",
+    url: "https://www.vatican.va/content/francesco/pt/apost_exhortations/documents/papa-francesco_esortazione-ap_20190325_christus-vivit.html",
+  },
+  {
+    slug: "deus-caritas-est",
+    title: "Deus Caritas Est",
+    author: "Papa Bento XVI",
+    format: "Documento pontifício",
+    theme: "Amor cristão e caridade",
+    description:
+      "Apresenta o amor cristão e a relação entre o amor de Deus e o serviço ao próximo.",
+    url: "https://www.vatican.va/content/benedict-xvi/pt/encyclicals/documents/hf_ben-xvi_enc_20051225_deus-caritas-est.html",
+  },
+];
+
+export const catecheticalSources: CatecheticalSource[] = [
+  {
+    slug: "cnbb-documento-107-iniciacao-vida-crista",
+    title: "Iniciação à vida cristã — Documento 107",
+    author: "CNBB · Comissão para a Animação Bíblico-Catequética",
+    format: "Formação online",
+    theme: "Iniciação à vida cristã",
+    description:
+      "Apresentação oficial do documento da CNBB e acesso a slides gratuitos para apoiar encontros de formação. A edição integral do documento pode ter condições próprias de acesso.",
+    url: "https://www.cnbb.org.br/cnbb-lanca-documento-sobre-iniciacao-a-vida-crista-aprovado-na-ultima-ag/",
+  },
+  {
+    slug: "cnbb-animacao-biblico-catequetica",
+    title: "Animação Bíblico-Catequética",
+    author: "CNBB",
+    format: "Formação online",
+    theme: "Catequese e Bíblia",
+    description:
+      "Notícias, iniciativas e conteúdos de formação da Comissão Episcopal para a Animação Bíblico-Catequética.",
+    url: "https://www.cnbb.org.br/categoria/comissoes/animacao-biblico-catequetica/",
+  },
+  {
+    slug: "a12-profetas-menores",
+    title: "Quem foram os chamados profetas menores na Bíblia?",
+    author: "Redação A12",
+    format: "Artigo online",
+    theme: "Bíblia e profetas",
+    description:
+      "Uma apresentação dos doze profetas menores e das mensagens de conversão, justiça, misericórdia e esperança presentes em seus livros.",
+    url: "https://a12.com/redacaoa12/igreja/quem-foram-os-chamados-profetas-menores-na-biblia/",
+  },
+  {
+    slug: "a12-oracoes-catolicas",
+    title: "Quais são as orações mais rezadas da Igreja Católica?",
+    author: "Redação A12",
+    format: "Artigo online",
+    theme: "Oração",
+    description:
+      "Conteúdo de espiritualidade que apresenta orações tradicionais e sua relação com a vida de fé.",
+    url: "https://a12.com/redacaoa12/espiritualidade/quais-sao-as-oracoes-mais-rezadas-da-igreja-catolica/",
+  },
+  {
+    slug: "a12-espiritualidade",
+    title: "Espiritualidade — conteúdos do A12",
+    author: "A12 · Rede Aparecida de Comunicação",
+    format: "Formação online",
+    theme: "Espiritualidade e evangelização",
+    description:
+      "Artigos e reflexões sobre oração e vivência da fé publicados no portal de evangelização da Rede Aparecida.",
+    url: "https://a12.com/redacaoa12/espiritualidade/",
+  },
+];
+
 export const faq = [
   {
     q: "Como faço para agendar um batizado?",

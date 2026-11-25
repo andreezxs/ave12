@@ -25,6 +25,7 @@ import { Route as PremiacoesRouteImport } from './routes/premiacoes'
 import { Route as RegulamentoRouteImport } from './routes/regulamento'
 import { Route as ShowDePremiosRouteImport } from './routes/show-de-premios'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ApiCatequeseRouteImport } from './routes/api.catequese'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias/index'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias/$slug'
 
@@ -109,6 +110,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCatequeseRoute = ApiCatequeseRouteImport.update({
+  id: '/api/catequese',
+  path: '/api/catequese',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
   id: '/noticias/',
   path: '/noticias/',
@@ -137,6 +143,7 @@ export interface FileRoutesByFullPath {
   '/regulamento': typeof RegulamentoRoute
   '/show-de-premios': typeof ShowDePremiosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/catequese': typeof ApiCatequeseRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/': typeof NoticiasIndexRoute
 }
@@ -157,6 +164,7 @@ export interface FileRoutesByTo {
   '/regulamento': typeof RegulamentoRoute
   '/show-de-premios': typeof ShowDePremiosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/catequese': typeof ApiCatequeseRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias': typeof NoticiasIndexRoute
 }
@@ -178,6 +186,7 @@ export interface FileRoutesById {
   '/regulamento': typeof RegulamentoRoute
   '/show-de-premios': typeof ShowDePremiosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/catequese': typeof ApiCatequeseRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/noticias/': typeof NoticiasIndexRoute
 }
@@ -200,6 +209,7 @@ export interface FileRouteTypes {
     | '/regulamento'
     | '/show-de-premios'
     | '/sitemap.xml'
+    | '/api/catequese'
     | '/noticias/$slug'
     | '/noticias/'
   fileRoutesByTo: FileRoutesByTo
@@ -220,6 +230,7 @@ export interface FileRouteTypes {
     | '/regulamento'
     | '/show-de-premios'
     | '/sitemap.xml'
+    | '/api/catequese'
     | '/noticias/$slug'
     | '/noticias'
   id:
@@ -240,6 +251,7 @@ export interface FileRouteTypes {
     | '/regulamento'
     | '/show-de-premios'
     | '/sitemap.xml'
+    | '/api/catequese'
     | '/noticias/$slug'
     | '/noticias/'
   fileRoutesById: FileRoutesById
@@ -261,6 +273,7 @@ export interface RootRouteChildren {
   RegulamentoRoute: typeof RegulamentoRoute
   ShowDePremiosRoute: typeof ShowDePremiosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiCatequeseRoute: typeof ApiCatequeseRoute
   NoticiasSlugRoute: typeof NoticiasSlugRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
 }
@@ -379,6 +392,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/catequese': {
+      id: '/api/catequese'
+      path: '/api/catequese'
+      fullPath: '/api/catequese'
+      preLoaderRoute: typeof ApiCatequeseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/noticias/': {
       id: '/noticias/'
       path: '/noticias'
@@ -413,6 +433,7 @@ const rootRouteChildren: RootRouteChildren = {
   RegulamentoRoute: RegulamentoRoute,
   ShowDePremiosRoute: ShowDePremiosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiCatequeseRoute: ApiCatequeseRoute,
   NoticiasSlugRoute: NoticiasSlugRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
 }

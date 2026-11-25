@@ -2,12 +2,18 @@ import { createServerFn } from "@tanstack/react-start";
 import {
   agenda as staticAgenda,
   albums as staticAlbums,
+  catecheticalBooks as staticCatecheticalBooks,
+  catecheticalSources as staticCatecheticalSources,
+  catechesisContents as staticCatechesisContents,
   faq as staticFaq,
   news as staticNews,
   prizes as staticPrizes,
   schedules as staticSchedules,
   timeline as staticTimeline,
   type GalleryAlbum,
+  type CatechesisContent,
+  type CatecheticalBook,
+  type CatecheticalSource,
   type NewsPost,
 } from "@/data/site";
 import { getSql } from "@/lib/db";
@@ -15,6 +21,12 @@ import { getSql } from "@/lib/db";
 export type AgendaItem = (typeof staticAgenda)[number];
 export type TimelineItem = (typeof staticTimeline)[number];
 export type ScheduleBlock = (typeof staticSchedules)[number];
+export type { CatechesisContent, CatecheticalBook };
+export type CatecheticalLibrary = {
+  contents: CatechesisContent[];
+  books: CatecheticalBook[];
+  sources: CatecheticalSource[];
+};
 export type FaqItem = (typeof staticFaq)[number];
 export type PrizeItem = (typeof staticPrizes)[number];
 export type SaintOfDayInfo = { name: string; description: string; url: string };
@@ -111,6 +123,14 @@ export const fetchSchedules = createServerFn({ method: "GET" }).handler(async ()
     return staticSchedules;
   }
 });
+
+export const fetchCatecheticalLibrary = createServerFn({ method: "GET" }).handler(
+  async (): Promise<CatecheticalLibrary> => ({
+    contents: staticCatechesisContents,
+    books: staticCatecheticalBooks,
+    sources: staticCatecheticalSources,
+  }),
+);
 
 export const fetchPrizes = createServerFn({ method: "GET" }).handler(async () => {
   try {

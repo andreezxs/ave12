@@ -79,6 +79,10 @@ VALUES (
 
 Use um `slug` único para cada notícia. A categoria define os filtros e também prioriza notícias do mesmo tema em “Leia também”.
 
+## Conteúdos gratuitos de catequese
+
+A página Centro Catequético exibe resumos gratuitos sobre fundamentos da catequese, Bíblia, Jesus Cristo, sacramentos, oração e liturgia; leituras gratuitas do Vaticano; e links oficiais de formação da CNBB e de evangelização do A12. A página da CNBB sobre o Documento 107 também disponibiliza slides gratuitos, enquanto a edição integral do documento pode ter condições próprias de acesso. O endpoint público `GET /api/catequese` retorna esses dados em JSON, no formato `{ "data": { "contents": [...], "books": [...], "sources": [...] } }`. Os conteúdos ficam em `src/data/site.ts`.
+
 ## Programação do Jubileu no Neon
 
 A seção de programação da página do Jubileu de Prata lê os eventos da tabela `agenda` cuja categoria seja `Jubileu de Prata`. Para adicionar uma atividade, use o Neon SQL Editor:

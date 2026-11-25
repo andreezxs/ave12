@@ -87,7 +87,7 @@ function Paroquia() {
       <PageHero
         eyebrow="Institucional"
         title="A Paróquia"
-        description={`Uma Ceb católica em ${parish.city}, integrada à ${parish.archdiocese} e dedicada à padroeira do Brasil.`}
+        description={`A Paróquia Nossa Senhora Aparecida em ${parish.city}, integrada à ${parish.archdiocese} e dedicada à padroeira do Brasil.`}
       />
 
       <section className="section-y">
@@ -107,18 +107,18 @@ function Paroquia() {
             <Reveal delay={0.1}>
               <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
                 <p>
-                  A Paróquia Nossa Senhora Aparecida nasceu da fé das famílias que ajudaram a
-                  construir Maringá. O que começou como uma pequena capela de bairro tornou-se, ao
-                  longo das décadas, um dos centros de referência espiritual da região.
+                  A Paróquia Nossa Senhora Aparecida, localizada no bairro Vila Esperança, em Maringá,
+                   foi fundada em 26 de janeiro de 2002, na Praça Nossa Senhora Aparecida. Sua história nasceu da fé, 
+                   da união e da dedicação das famílias que contribuíram para a formação da comunidade.
                 </p>
                 <p>
-                  Hoje a paróquia reúne Cebs filiais, dezenas de pastorais e movimentos, um amplo
+                  Hoje a paróquia reúne cebs, pastorais e movimentos, um amplo
                   trabalho de catequese e uma atuação social que atende famílias em situação de
                   vulnerabilidade.
                 </p>
                 <p>
-                  Nossa vida comunitária se organiza em torno da Eucaristia, da Palavra e do serviço
-                  — três pilares que sustentam tudo o que fazemos.
+                  Nossa comunidade tem como centro a Eucaristia, a vivência da Palavra de Deus e o serviço ao próximo,
+                  fundamentos que orientam e dão sentido a toda a nossa caminhada de fé.
                 </p>
               </div>
             </Reveal>

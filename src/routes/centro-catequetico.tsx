@@ -1,12 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { BookOpen, Cross, UsersRound } from "lucide-react";
+import { BookOpen, Cross, ExternalLink, UsersRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { parish } from "@/data/site";
+import { fetchCatecheticalLibrary } from "@/lib/content";
 import catecheticalCenterVideo from "@/assets/centro-catequetico-h264.mp4";
 
 export const Route = createFileRoute("/centro-catequetico")({
+  loader: async () => ({ library: await fetchCatecheticalLibrary() }),
   component: CentroCatequetico,
   head: () => ({
     meta: [
@@ -49,6 +51,8 @@ const formationPaths = [
 ];
 
 function CentroCatequetico() {
+  const { library } = Route.useLoaderData();
+
   return (
     <>
       <header className="relative overflow-hidden border-b border-border bg-[linear-gradient(135deg,#e7f6fb,#ffffff)] pt-32 pb-16 md:pt-40 md:pb-24">
@@ -115,6 +119,124 @@ function CentroCatequetico() {
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {path.description}
                   </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y border-y border-border bg-muted/30">
+        <div className="container-page">
+          <SectionTitle
+            eyebrow="Formação gratuita"
+            title="Conteúdos de catequese"
+            description="Resumos para conhecer e aprender sobre a fé cristã. Aprofunde cada tema nas referências do Catecismo da Igreja Católica."
+          />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {library.contents.map((topic, i) => (
+              <Reveal key={topic.slug} delay={i * 0.05}>
+                <article className="surface-card h-full p-6">
+                  <BookOpen className="size-5 text-primary" aria-hidden />
+                  <p className="mt-4 text-xs font-semibold tracking-wide text-primary uppercase">
+                    {topic.category}
+                  </p>
+                  <h2 className="mt-2 text-lg font-semibold">{topic.title}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {topic.summary}
+                  </p>
+                  <details className="mt-5 border-t border-border pt-4">
+                    <summary className="cursor-pointer text-sm font-semibold">Ler conteúdo</summary>
+                    <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                      {topic.content.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                    <a
+                      className="mt-4 inline-block text-sm font-medium text-primary underline-offset-4 hover:underline"
+                      href={topic.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {topic.reference}
+                    </a>
+                  </details>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y">
+        <div className="container-page">
+          <SectionTitle
+            eyebrow="Biblioteca gratuita"
+            title="Livros e ensinamentos católicos"
+            description="Leituras completas em português, disponíveis gratuitamente nas fontes oficiais do Vaticano."
+          />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {library.books.map((book, i) => (
+              <Reveal key={book.slug} delay={i * 0.05}>
+                <article className="surface-card flex h-full flex-col p-6">
+                  <BookOpen className="size-5 text-primary" aria-hidden />
+                  <p className="mt-4 text-xs font-semibold tracking-wide text-primary uppercase">
+                    {book.theme}
+                  </p>
+                  <h2 className="mt-2 text-lg font-semibold">{book.title}</h2>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {book.format} · {book.author}
+                  </p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {book.description}
+                  </p>
+                  <a
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                    href={book.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Acessar leitura gratuita
+                    <ExternalLink className="size-4" aria-hidden />
+                  </a>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y border-y border-border bg-muted/30">
+        <div className="container-page">
+          <SectionTitle
+            eyebrow="CNBB e A12"
+            title="Formação brasileira e evangelização"
+            description="Acesse conteúdos de formação catequética da CNBB e artigos de evangelização e espiritualidade do A12. A disponibilidade de publicações pode variar conforme a fonte."
+          />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {library.sources.map((source, i) => (
+              <Reveal key={source.slug} delay={i * 0.05}>
+                <article className="surface-card flex h-full flex-col p-6">
+                  <BookOpen className="size-5 text-primary" aria-hidden />
+                  <p className="mt-4 text-xs font-semibold tracking-wide text-primary uppercase">
+                    {source.theme}
+                  </p>
+                  <h2 className="mt-2 text-lg font-semibold">{source.title}</h2>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {source.format} · {source.author}
+                  </p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {source.description}
+                  </p>
+                  <a
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline"
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Acessar fonte oficial
+                    <ExternalLink className="size-4" aria-hidden />
+                  </a>
                 </article>
               </Reveal>
             ))}
