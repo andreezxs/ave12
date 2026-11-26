@@ -20,7 +20,7 @@ const sql = postgres({
   database: parsed.pathname.replace(/^\//, ""),
   username: decodeURIComponent(parsed.username),
   password: decodeURIComponent(parsed.password),
-  ssl: { rejectUnauthorized: false, servername: parsed.hostname },
+  ssl: { rejectUnauthorized: true, servername: parsed.hostname },
   max: 1,
   connect_timeout: 15,
 });
