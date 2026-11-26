@@ -15,7 +15,7 @@ import {
   Radio,
   RefreshCw,
 } from "lucide-react";
-import { type ReactNode, useEffect, useState } from "react";
+import { type CSSProperties, type ReactNode, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionTitle } from "@/components/site/Section";
@@ -146,6 +146,27 @@ function getLiturgicalSeason(celebration: string): string {
   if (/quaresma/i.test(celebration)) return "Tempo da Quaresma";
   if (/páscoa|pascal/i.test(celebration)) return "Tempo Pascal";
   return "Tempo litúrgico conforme a celebração";
+}
+
+function getLiturgicalColorStyle(color: string): CSSProperties {
+  const normalized = color
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .toLowerCase();
+
+  const colors: Record<string, CSSProperties> = {
+    verde: { backgroundColor: "#2e7d32", color: "#ffffff" },
+    roxo: { backgroundColor: "#6a1b9a", color: "#ffffff" },
+    violeta: { backgroundColor: "#6a1b9a", color: "#ffffff" },
+    branco: { backgroundColor: "#ffffff", color: "#1f2937", border: "1px solid #d1d5db" },
+    vermelho: { backgroundColor: "#c62828", color: "#ffffff" },
+    rosa: { backgroundColor: "#ad1457", color: "#ffffff" },
+    preto: { backgroundColor: "#212121", color: "#ffffff" },
+    dourado: { backgroundColor: "#b8860b", color: "#ffffff" },
+  };
+
+  return colors[normalized] ?? {};
 }
 
 function renderVerseText(text: string): ReactNode[] {
@@ -290,7 +311,10 @@ function DailyLiturgySection() {
                     </p>
                     <h3 className="mt-1 text-xl font-semibold">{state.liturgy.celebration}</h3>
                   </div>
-                  <span className="rounded-full bg-accent px-3 py-1 text-sm text-accent-foreground">
+                  <span
+                    className="rounded-full bg-accent px-3 py-1 text-sm text-accent-foreground"
+                    style={getLiturgicalColorStyle(state.liturgy.liturgicalColor)}
+                  >
                     Cor litúrgica: {state.liturgy.liturgicalColor}
                   </span>
                 </div>
