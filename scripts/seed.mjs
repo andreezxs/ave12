@@ -4,9 +4,9 @@ import { config } from "dotenv";
 
 config();
 
-const url = process.env.DATABASE_URL;
+const url = process.env.DATABASE_SEED_URL;
 if (!url) {
-  throw new Error("DATABASE_URL nao configurada");
+  throw new Error("DATABASE_SEED_URL nao configurada");
 }
 
 const parsed = new URL(
