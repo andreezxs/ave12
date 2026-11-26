@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CalendarDays, Church, Clock, Heart, MessageCircle } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useReducedMotion } from "motion/react";
 import { PageHero, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
@@ -14,6 +16,9 @@ import { chapelSchedule, parish } from "@/data/site";
 import chapelWedding from "@/assets/CASA CAPELA.jpeg";
 import chapelWeddingDetail from "@/assets/CASA CAPELA 02.jpeg";
 import matrizWedding from "@/assets/CASA MATRIZ.jpeg";
+import chapelAerial from "@/assets/AEREO CAPELA.jpg";
+import chapelDuo from "@/assets/CAPELA DUO.jpg";
+import chapelFaithful from "@/assets/CAPELA E FIELS.jpg";
 
 const weddingPhotos = [
   {
@@ -30,6 +35,21 @@ const weddingPhotos = [
     src: matrizWedding,
     alt: "Interior da Igreja Matriz Nossa Senhora Aparecida decorado para um casamento",
     caption: "Igreja Matriz Nossa Senhora Aparecida",
+  },
+];
+
+const chapelHeroPhotos = [
+  {
+    src: chapelAerial,
+    alt: "Vista aérea da Capela Nossa Senhora de Fátima",
+  },
+  {
+    src: chapelDuo,
+    alt: "Fiéis reunidos durante uma celebração na capela",
+  },
+  {
+    src: chapelFaithful,
+    alt: "Comunidade reunida na Capela Nossa Senhora de Fátima",
   },
 ];
 
@@ -66,6 +86,7 @@ function CapelaNossaSenhoraDeFatima() {
         eyebrow="Comunidade paroquial"
         title="Capela Nossa Senhora de Fátima"
         description={`Uma comunidade de fé que faz parte da ${parish.name}, em ${parish.city}.`}
+        image={<ChapelHeroCarousel />}
       >
         <div className="flex flex-wrap gap-3">
           <Button asChild className="rounded-full">
@@ -188,6 +209,49 @@ function CapelaNossaSenhoraDeFatima() {
         </div>
       </section>
     </>
+  );
+}
+
+function ChapelHeroCarousel() {
+  const [activePhoto, setActivePhoto] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasFocus, setHasFocus] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (prefersReducedMotion || isHovered || hasFocus) return;
+
+    const interval = window.setInterval(() => {
+      setActivePhoto((current) => (current + 1) % chapelHeroPhotos.length);
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, [hasFocus, isHovered, prefersReducedMotion]);
+
+  return (
+    <div
+      className="relative aspect-[3/2] w-full overflow-hidden rounded-3xl shadow-[var(--shadow-lift)]"
+      role="region"
+      aria-label="Fotos da Capela Nossa Senhora de Fátima"
+      tabIndex={0}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setHasFocus(true)}
+      onBlur={() => setHasFocus(false)}
+    >
+      {chapelHeroPhotos.map((photo, index) => (
+        <img
+          key={photo.src}
+          src={photo.src}
+          alt={index === activePhoto ? photo.alt : ""}
+          aria-hidden={index !== activePhoto}
+          loading={index === 0 ? "eager" : "lazy"}
+          className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
+            index === activePhoto ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
+    </div>
   );
 }
 

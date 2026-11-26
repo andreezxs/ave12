@@ -3,6 +3,59 @@ import { PageHero, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
 import { fetchTimeline } from "@/lib/content";
 import heroImg from "@/assets/hero-igreja.jpeg";
+import historicalPhoto127 from "@/assets/fotos historicas/127.JPG";
+import historicalPhoto128 from "@/assets/fotos historicas/128.JPG";
+import historicalPhotoCommunity from "@/assets/fotos historicas/854739963_1453323166806142_8657542668630289838_n.jpg";
+import historicalPhotoStatue from "@/assets/fotos historicas/DSC07077.JPG";
+import historicalPhotoChurch from "@/assets/fotos historicas/Fotos igreja 6.jpeg";
+import historicalPhotoParish from "@/assets/fotos historicas/Paróquia 050.jpg";
+import historicalPhotoKitchen from "@/assets/fotos historicas/cozinha.jpg";
+import historicalPhotoChild from "@/assets/fotos historicas/criança.jpg";
+import historicalPhotoFeast from "@/assets/fotos historicas/festa.jpg";
+import historicalPhotoArchive from "@/assets/fotos historicas/historica.jpg";
+
+const historicalPhotos = [
+  {
+    src: historicalPhoto127,
+    alt: "Pessoa trabalhando na imagem de Nossa Senhora Aparecida",
+  },
+  {
+    src: historicalPhoto128,
+    alt: "Restauração da imagem de Nossa Senhora Aparecida",
+  },
+  {
+    src: historicalPhotoCommunity,
+    alt: "Crianças e famílias reunidas em celebração na igreja",
+  },
+  {
+    src: historicalPhotoStatue,
+    alt: "Imagem de Nossa Senhora Aparecida na área externa da igreja",
+  },
+  {
+    src: historicalPhotoChurch,
+    alt: "Fachada da igreja da comunidade",
+  },
+  {
+    src: historicalPhotoParish,
+    alt: "Voluntárias preparando alimentos para a comunidade",
+  },
+  {
+    src: historicalPhotoKitchen,
+    alt: "Famílias reunidas em atividade comunitária",
+  },
+  {
+    src: historicalPhotoChild,
+    alt: "Participantes reunidos em confraternização paroquial",
+  },
+  {
+    src: historicalPhotoFeast,
+    alt: "Imagem de Nossa Senhora Aparecida diante da igreja",
+  },
+  {
+    src: historicalPhotoArchive,
+    alt: "Vista externa da Igreja Matriz Nossa Senhora Aparecida",
+  },
+];
 
 export const Route = createFileRoute("/historia")({
   loader: async () => ({ timeline: await fetchTimeline() }),
@@ -83,17 +136,16 @@ function Historia() {
 
       <section className="section-y bg-surface">
         <div className="container-page">
-          <SectionTitle
-            eyebrow="Acervo"
-            title="Fotos históricas"
-            description="As imagens do acervo paroquial ficam hospedadas no servidor externo de fotos e são exibidas aqui automaticamente assim que a integração for ativada."
-          />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <Reveal key={i} delay={i * 0.04}>
-                <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border border-dashed border-border bg-muted text-sm text-muted-foreground">
-                  Acervo {i + 1}
-                </div>
+          <SectionTitle eyebrow="Acervo" title="Fotos históricas" />
+          <div className="mt-10 columns-1 gap-5 sm:columns-2 lg:columns-3">
+            {historicalPhotos.map((photo, i) => (
+              <Reveal key={photo.src} delay={i * 0.04} className="mb-5 break-inside-avoid">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="block h-auto w-full rounded-2xl shadow-[var(--shadow-soft)]"
+                />
               </Reveal>
             ))}
           </div>

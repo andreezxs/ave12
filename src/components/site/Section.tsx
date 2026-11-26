@@ -32,11 +32,13 @@ export function PageHero({
   title,
   description,
   children,
+  image,
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   children?: ReactNode;
+  image?: ReactNode;
 }) {
   return (
     <header className="relative overflow-hidden border-b border-border bg-[linear-gradient(135deg,#e7f6fb,#ffffff)] pt-32 pb-16 md:pt-40 md:pb-24">
@@ -44,7 +46,11 @@ export function PageHero({
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 h-96 w-[52rem] -translate-x-1/2 rounded-full opacity-20 blur-3xl bg-gradient-brand"
       />
-      <div className="container-page relative">
+      <div
+        className={`container-page relative ${
+          image ? "grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]" : ""
+        }`}
+      >
         <Reveal>
           <span className="text-xs font-semibold tracking-[0.18em] text-primary uppercase">
             {eyebrow}
@@ -57,6 +63,7 @@ export function PageHero({
           ) : null}
           {children ? <div className="mt-8">{children}</div> : null}
         </Reveal>
+        {image ? <Reveal delay={0.1}>{image}</Reveal> : null}
       </div>
     </header>
   );

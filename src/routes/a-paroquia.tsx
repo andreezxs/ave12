@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Heart, Eye, Compass, Users } from "lucide-react";
 import { PageHero, SectionTitle } from "@/components/site/Section";
 import { Reveal } from "@/components/site/Reveal";
+import { CebsMap } from "@/components/site/CebsMap";
 import { parish } from "@/data/site";
 import interiorImg from "@/assets/interior-igreja.jpeg";
 import CebImg from "@/assets/comunidade.jpg";
@@ -216,6 +217,7 @@ function Paroquia() {
                 </Reveal>
               ))}
             </div>
+            <CebsMap />
           </div>
         </div>
       </section>

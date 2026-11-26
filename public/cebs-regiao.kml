@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ex="http://earth.google.com/kml/ext">
+<Document id="document">
+	<ex:extension>base64;CooBCoEBCn8KAggBEnkKdwokCiAKAwjQDxoHCNLtZRD_ASEAAAAAAADwPykAAAAAAAAAABgAEg8KCAitgO8HEP8BEKAfGAAaGgoHCP___wcQQBIICK2A7wcQ_wEYoB8gACgAIgkIARIFCP___wcqFwgBEggI____BxD_ARkAAAAAAADwPyAAEgQIARAA</ex:extension>
+	<name>CEBS PAROQUIA NOSSA SENHORA APARECIDA</name>
+	<gx:CascadingStyle kml:id="__managed_style_05C7C04204434A6BEA8C_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=d32f2f&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_05C7C04204434A6BEA8C_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=d32f2f&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_05C7C04204434A6BEA8C">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_05C7C04204434A6BEA8C_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_05C7C04204434A6BEA8C_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="__managed_style_0AAA515C87434A6B8D76">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0AAA515C87434A6B8D76_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0AAA515C87434A6B8D76_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_05DA65C6AA434A6AE7C1_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=f00db1&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0AAA515C87434A6B8D76_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=f57c00&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_05DA65C6AA434A6AE7C1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_05DA65C6AA434A6AE7C1_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_05DA65C6AA434A6AE7C1_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_07F402D57B434A6A9104_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=26a69a&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_07F402D57B434A6A9104">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_07F402D57B434A6A9104_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_07F402D57B434A6A9104_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_047E81D581434A6C44B0_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=303f9f&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0FF9E8CBC5434A677D83_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=d32f2f&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+				<color>ff2dc0fb</color>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0FF9E8CBC5434A677D83_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=d32f2f&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+				<color>ff2dc0fb</color>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_06109762E3434A66C4F4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_06109762E3434A66C4F4_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_06109762E3434A66C4F4_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="__managed_style_08ECF79F8A434A64B9C4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_08ECF79F8A434A64B9C4_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_08ECF79F8A434A64B9C4_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="__managed_style_0A1B46E7D9434A5E21EB">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0A1B46E7D9434A5E21EB_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0A1B46E7D9434A5E21EB_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_01F92D90BC434A63A884_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffe4ea27</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>80e4ea27</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_08ECF79F8A434A64B9C4_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff6b7900</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>806b7900</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_01F92D90BC434A63A884_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffe4ea27</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>80e4ea27</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_01F92D90BC434A63A884">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_01F92D90BC434A63A884_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_01F92D90BC434A63A884_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_0AAA515C87434A6B8D76_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=f57c00&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0FF9E8CBC5434A677D83">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0FF9E8CBC5434A677D83_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0FF9E8CBC5434A677D83_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_0A1C3508C8434A61E953_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff9f3f30</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>80c06b5c</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_047E81D581434A6C44B0_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=303f9f&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0A1C3508C8434A61E953_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff9f3f30</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>80c06b5c</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0F12FAC88B434A6124F4_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffc40ef8</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>808304f7</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0F12FAC88B434A6124F4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0F12FAC88B434A6124F4_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0F12FAC88B434A6124F4_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_0F12FAC88B434A6124F4_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffc40ef8</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>808304f7</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_06109762E3434A66C4F4_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2f2fd3</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>802f2fd3</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_08ECF79F8A434A64B9C4_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff6b7900</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>806b7900</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0A1C3508C8434A61E953">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0A1C3508C8434A61E953_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0A1C3508C8434A61E953_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_05DA65C6AA434A6AE7C1_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=f00db1&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_07CFC5E32E434A5F9B64_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffa21f7b</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>80bc47ab</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_07CFC5E32E434A5F9B64">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_07CFC5E32E434A5F9B64_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_07CFC5E32E434A5F9B64_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_0A1B46E7D9434A5E21EB_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff007cf5</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>8026a7ff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_07F402D57B434A6A9104_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=26a69a&amp;id=2127&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_047E81D581434A6C44B0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_047E81D581434A6C44B0_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_047E81D581434A6C44B0_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_07CFC5E32E434A5F9B64_highlight">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ffa21f7b</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>80bc47ab</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0A1B46E7D9434A5E21EB_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff007cf5</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>8026a7ff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_06109762E3434A66C4F4_normal">
+		<ex:extension>base64;EgIYAQ</ex:extension>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2f2fd3</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>802f2fd3</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<Placemark id="0F5AC4BB40434A5DE82C">
+		<name>CEB NOSSA SENHORA DE GUADALUPE</name>
+		<LookAt>
+			<longitude>-51.92864287249701</longitude>
+			<latitude>-23.39754620746223</latitude>
+			<altitude>540.1188441798619</altitude>
+			<heading>17.71218611592507</heading>
+			<tilt>0.1515379346930214</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>2036.222563657793</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0A1B46E7D9434A5E21EB</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-51.93863245568999,-23.39518938095438,0 -51.93900267948903,-23.39547585349131,0 -51.93857617201633,-23.39628921880361,0 -51.93756837183344,-23.39689679217654,0 -51.93605944641257,-23.39737360077891,0 -51.93491706488529,-23.3983143869085,0 -51.93389068069266,-23.39949578002663,0 -51.93296301242258,-23.39721985349274,0 -51.93863245568999,-23.39518938095438,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="0871288293434A5F7D6E">
+		<name>CEB SAGRADA FAMÍLIA</name>
+		<LookAt>
+			<longitude>-51.93316205281754</longitude>
+			<latitude>-23.39849919669881</latitude>
+			<altitude>515.0264999327397</altitude>
+			<heading>16.26228844106456</heading>
+			<tilt>0.1515238292091672</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1443.268741291249</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_07CFC5E32E434A5F9B64</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-51.93381352282371,-23.39949571948369,0 -51.9318818232703,-23.40034688659119,0 -51.93100508817134,-23.39793917556239,0 -51.93098636444002,-23.39787482209829,0 -51.93291154429012,-23.39722494614317,0 -51.93381352282371,-23.39949571948369,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="04560F3E51434A60AD40">
+		<name>CEB IMACULADA CONCEIÇÃO</name>
+		<LookAt>
+			<longitude>-51.9331257875253</longitude>
+			<latitude>-23.39910324580713</latitude>
+			<altitude>513.3872418835512</altitude>
+			<heading>16.98099903736084</heading>
+			<tilt>0.151538292625626</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>2051.664778296836</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0F12FAC88B434A6124F4</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-51.93089807341275,-23.39785635702174,0 -51.93214272993993,-23.40105062081821,0 -51.93215681153553,-23.40163504446086,0 -51.93210936348056,-23.40212528840223,0 -51.93210217005856,-23.40229223519225,0 -51.92865562573581,-23.40344842695114,0 -51.9270924509356,-23.39949509656031,0 -51.92739787096383,-23.39901831015288,0 -51.93089807341275,-23.39785635702174,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="08972486AE434A61B32C">
+		<name>CEB SÃO JOSÉ</name>
+		<LookAt>
+			<longitude>-51.93469600841488</longitude>
+			<latitude>-23.39823382633045</latitude>
+			<altitude>499.9564736258996</altitude>
+			<heading>15.40268190068374</heading>
+			<tilt>0.1515386106327708</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>2065.095733573835</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0A1C3508C8434A61E953</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-51.94214143418883,-23.39617282231068,0 -51.94230625541277,-23.39674754359509,0 -51.94211902467116,-23.39882037195498,0 -51.93698521053272,-23.40058191343062,0 -51.93607875904172,-23.39823498346847,0 -51.94214143418883,-23.39617282231068,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="019C418B69434A635329">
+		<name>CEB NOSSA SENHORA DAS GRAÇAS</name>
+		<LookAt>
+			<longitude>-51.94086757019948</longitude>
+			<latitude>-23.39899201853281</latitude>
+			<altitude>489.1359829940176</altitude>
+			<heading>15.4020186449075</heading>
+			<tilt>0.1515183751525552</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1214.489982132364</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_01F92D90BC434A63A884</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-51.94610838727874,-23.39760609190406,0 -51.94679891216455,-23.39839180907747,0 -51.94739454995774,-23.39961886107951,0 -51.93760702843378,-23.40294992718604,0 -51.93670033405713,-23.4008088842932,0 -51.94484879811541,-23.39787198975062,0 -51.94505127708463,-23.39669737818049,0 -51.94610838727874,-23.39760609190406,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="01CE21D539434A6457B8">
+		<name>CEB NOSSA SENHORA DO ROCIO</name>
+		<LookAt>
+			<longitude>-51.93696696685814</longitude>
+			<latitude>-23.40130529284985</latitude>
+			<altitude>523.7175899014685</altitude>
+			<heading>21.21321517970496</heading>
+			<tilt>0.151536155008254</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1962.446410687699</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_08ECF79F8A434A64B9C4</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-51.93666462962543,-23.40081690001368,0 -51.9376041273562,-23.40299834010521,0 -51.93219484269292,-23.40478704865722,0 -51.93237928458234,-23.4052502852238,0 -51.92978820428722,-23.40612869279692,0 -51.92873620031448,-23.40357306260474,0 -51.93666462962543,-23.40081690001368,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="04AB2942D7434A6685D0">
+		<name>CEB NOSSA SENHORA DE FÁTIMA</name>
+		<LookAt>
+			<longitude>-51.93367851767516</longitude>
+			<latitude>-23.39398105196346</latitude>
+			<altitude>525.4904132764269</altitude>
+			<heading>25.44423399039255</heading>
+			<tilt>0.1515477194255552</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>2449.694062943745</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_06109762E3434A66C4F4</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-51.92732861254717,-23.39901700254499,0 -51.92689850904743,-23.39880107559669,0 -51.92680650676171,-23.39705986156878,0 -51.92664579491961,-23.39661799421717,0 -51.9295407235016,-23.39045449468669,0 -51.93022617541126,-23.3902141781824,0 -51.93857954088213,-23.38986633136218,0 -51.9391666951517,-23.3918092234248,0 -51.94035848502907,-23.39153599054744,0 -51.94177166376812,-23.39214234342147,0 -51.94230656875705,-23.39217439146446,0 -51.9425891104353,-23.39211507796758,0 -51.94270750792531,-23.39221747339112,0 -51.94275559717128,-23.39243511123296,0 -51.94264915456839,-23.39255792885413,0 -51.94212965568079,-23.39327094979583,0 -51.94232615754409,-23.393896552001,0 -51.93966469773428,-23.39485601222166,0 -51.93921432210804,-23.3944832844843,0 -51.93877016936909,-23.39468314745182,0 -51.93871082062287,-23.39511242258219,0 -51.92732861254717,-23.39901700254499,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+	<Placemark id="0193211318434A66FEB0">
+		<name>PARÓQUIA NOSSA SENHORA APARECIDA</name>
+		<LookAt>
+			<longitude>-51.93559085574804</longitude>
+			<latitude>-23.40169351469882</latitude>
+			<altitude>525.8521388634159</altitude>
+			<heading>24.88494920681409</heading>
+			<tilt>0.1515161569938281</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1122.297928525368</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0FF9E8CBC5434A677D83</styleUrl>
+		<Point>
+			<coordinates>-51.93635446821698,-23.40220987796771,527.3808256454673</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0EF0EF570B434A67F464">
+		<name>CAPELA NOSSA SENHORA DE FÁTIMA</name>
+		<LookAt>
+			<longitude>-51.93666509307562</longitude>
+			<latitude>-23.39343215761205</latitude>
+			<altitude>503.5993129707045</altitude>
+			<heading>24.8852902018501</heading>
+			<tilt>0.1514939814872554</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>190.1208180091271</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0FF9E8CBC5434A677D83</styleUrl>
+		<Point>
+			<coordinates>-51.93661661866143,-23.39342558304454,504.0983531671384</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0BFE088649434A6920FC">
+		<name>CEB SÃO JOSÉ</name>
+		<LookAt>
+			<longitude>-51.93774752809674</longitude>
+			<latitude>-23.39797426493432</latitude>
+			<altitude>488.3253200661438</altitude>
+			<heading>24.88515034089542</heading>
+			<tilt>0.1515287142013549</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1651.416748418414</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_047E81D581434A6C44B0</styleUrl>
+		<Point>
+			<coordinates>-51.93930933515263,-23.39852073893973,492.890120125523</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0EB736FB23434A69A661">
+		<name>CEB NOSSA SENHORA DAS GRAÇAS</name>
+		<LookAt>
+			<longitude>-51.93939674607788</longitude>
+			<latitude>-23.39871689194793</latitude>
+			<altitude>495.0791409841579</altitude>
+			<heading>24.88559617686847</heading>
+			<tilt>0.1515378208712284</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>2034.463105735194</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_07F402D57B434A6A9104</styleUrl>
+		<Point>
+			<coordinates>-51.94144888024278,-23.40045772227851,493.4379705481905</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0CCD8A388A434A6A2128">
+		<name>CEB NOSSA SENHORA DO ROCIO</name>
+		<LookAt>
+			<longitude>-51.93548374656277</longitude>
+			<latitude>-23.40094722534811</latitude>
+			<altitude>514.9889729067659</altitude>
+			<heading>24.88401441089529</heading>
+			<tilt>0.1515226734137765</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1397.469155983563</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_07F402D57B434A6A9104</styleUrl>
+		<Point>
+			<coordinates>-51.93330210278886,-23.40322069250663,532.5914075649679</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0E5018B0C1434A6AC2B9">
+		<name>CEB IMACULADA CONCEIÇÃO</name>
+		<LookAt>
+			<longitude>-51.9310120677145</longitude>
+			<latitude>-23.40019781917617</latitude>
+			<altitude>521.2431919648338</altitude>
+			<heading>24.88249519248726</heading>
+			<tilt>0.1515152037863883</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1083.51614946223</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05DA65C6AA434A6AE7C1</styleUrl>
+		<Point>
+			<coordinates>-51.92941461531734,-23.40027767872829,533.2878740137671</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0EC1F26D6A434A6B3CE0">
+		<name>CEB SAGRADA FAMÍLIA</name>
+		<LookAt>
+			<longitude>-51.93203738342124</longitude>
+			<latitude>-23.39889406635046</latitude>
+			<altitude>521.4353480054209</altitude>
+			<heading>24.88279946411659</heading>
+			<tilt>0.1515147245368006</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1063.412270619156</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05DA65C6AA434A6AE7C1</styleUrl>
+		<Point>
+			<coordinates>-51.93234216196998,-23.39852032361224,523.6004871941881</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="01FEC51612434A6B85E3">
+		<name>CEB NOSSA SENHORA DE GUADALUPE</name>
+		<LookAt>
+			<longitude>-51.93369116922473</longitude>
+			<latitude>-23.39789444459951</latitude>
+			<altitude>513.642188582927</altitude>
+			<heading>25.5015833343739</heading>
+			<tilt>0.1515160296129586</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1118.309527227539</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0AAA515C87434A6B8D76</styleUrl>
+		<Point>
+			<coordinates>-51.93561935493341,-23.39691607979086,502.3556785624061</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="051592EDD6434A6BE246">
+		<name>CEB NOSSA SENHORA DE FÁTIMA</name>
+		<LookAt>
+			<longitude>-51.93124576515555</longitude>
+			<latitude>-23.39529367463948</latitude>
+			<altitude>532.5599122560052</altitude>
+			<heading>25.50115271420195</heading>
+			<tilt>0.1515423337502285</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>2224.702245389053</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_05C7C04204434A6BEA8C</styleUrl>
+		<Point>
+			<coordinates>-51.93284435114133,-23.39382662167503,524.6414486922384</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>
